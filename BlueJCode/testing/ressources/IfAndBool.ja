@@ -1,0 +1,11 @@
+import java.util.*;
+
+public class Test {
+    // Describe this function...
+    public void isTrue(boolean x) {
+
+        if (x) {
+            System.out.println(":)");
+        }
+    }
+}

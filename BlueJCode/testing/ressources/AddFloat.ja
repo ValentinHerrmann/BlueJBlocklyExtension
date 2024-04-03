@@ -1,0 +1,10 @@
+import java.util.*;
+
+public class Test {
+    float y;
+
+    // Describe this function...
+    public void addToY(float x) {
+        y = x + 1;
+    }
+}

@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class Test {
+    // Describe this function...
+    public void test(float x) {
+
+        while (x < 15) {
+            System.out.println("abc");
+            x = x + 1;
+        }
+    }
+}
