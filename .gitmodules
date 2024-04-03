@@ -1,0 +1,3 @@
+[submodule "Blockly"]
+	path = Blockly
+	url = https://gitlab.lrz.de/bluejblocklygroup/Blockly.git
