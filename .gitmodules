@@ -1,3 +1,6 @@
 [submodule "Blockly"]
 	path = Blockly
 	url = https://gitlab.lrz.de/bluejblocklygroup/Blockly.git
+[submodule "javafx-sdk-21.0.1"]
+	path = javafx-sdk-21.0.1
+	url = https://gitlab.lrz.de/bluejblocklygroup/javafx-sdk-21.0.1.git
