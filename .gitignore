@@ -3,3 +3,7 @@ out/
 *.class
 *.ctxt
 Blockly/custom-generator-codelab/node_modules/.bin/
+
+logs/
+
+*.bluej
