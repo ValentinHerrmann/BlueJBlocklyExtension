@@ -10,3 +10,6 @@
 [submodule "extensions2"]
 	path = extensions2
 	url = https://gitlab.lrz.de/bluejblocklygroup/extensions2.git
+[submodule "Gameboard"]
+	path = Gameboard
+	url = https://gitlab.lrz.de/bluejblocklygroup/gameboard.git
