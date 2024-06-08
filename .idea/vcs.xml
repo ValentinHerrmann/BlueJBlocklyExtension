@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Blockly" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Gameboard" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/extensions2" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/javafx-sdk-21.0.1" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/jcefsampleapp" vcs="Git" />
+  </component>
+</project>
