@@ -3,10 +3,10 @@
 	url = https://gitlab.lrz.de/bluejblocklygroup/Blockly.git
 [submodule "javafx-sdk-21.0.1"]
 	path = javafx-sdk-21.0.1
-	url = https://gitlab.lrz.de/bluejblocklygroup/javafx-sdk-21.0.1.git
+	url = https://github.com/ValentinHerrmann/javafx-sdk-21.0.1.git
 [submodule "jcefsampleapp"]
 	path = jcefsampleapp
-	url = https://gitlab.lrz.de/bluejblocklygroup/jcefsampleapp.git
+	url = https://github.com/ValentinHerrmann/jcefsampleapp.git
 [submodule "extensions2"]
 	path = extensions2
 	url = https://gitlab.lrz.de/bluejblocklygroup/extensions2.git
