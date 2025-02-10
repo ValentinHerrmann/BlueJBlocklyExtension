@@ -7,6 +7,9 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          token: ${{ secrets.PAT_TOKEN }}
       - name: Build AIP
         uses: caphyon/advinst-github-action@v2.0
         with:
