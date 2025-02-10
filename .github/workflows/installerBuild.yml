@@ -21,7 +21,7 @@ jobs:
             SetProperty FOO="foo"
             SetVersion 1.2.0
       - name: Publish setup artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: setup
           path: ${{ github.workspace }}\setup\blueJBlocklyInstaller.msi
