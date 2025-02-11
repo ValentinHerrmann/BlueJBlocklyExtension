@@ -4,7 +4,6 @@ import BlueJCode.Blockly.BlocklyHandler;
 import bluej.extensions2.*;
 import bluej.extensions2.event.PackageEvent;
 import bluej.extensions2.event.PackageListener;
-import org.apache.commons.compress.compressors.lz77support.LZ77Compressor;
 
 import java.net.URL;
 

@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 public class Config
 {
-    private static final String version = "1.5.0";
+    private static final String version = "1.5.1";
     private static final String blocklyHtmlPath = "/Blockly/custom-generator-codelab/dist/index.html";
     private static String libPath = null;
     private static String projectPath = null;
