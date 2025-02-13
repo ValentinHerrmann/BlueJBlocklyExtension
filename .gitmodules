@@ -4,9 +4,6 @@
 [submodule "jcefsampleapp"]
 	path = jcefsampleapp
 	url = https://github.com/ValentinHerrmann/jcefsampleapp.git
-[submodule "Gameboard"]
-	path = Gameboard
-	url = https://github.com/ValentinHerrmann/Gameboard.git
 [submodule "resources/Blockly"]
 	path = resources/Blockly
 	url = https://github.com/ValentinHerrmann/B2J_dist.git
