@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/bluejblocklyextension.iml" filepath="$PROJECT_DIR$/.idea/bluejblocklyextension.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BBE.iml" filepath="$PROJECT_DIR$/BBE.iml" />
     </modules>
   </component>
 </project>
