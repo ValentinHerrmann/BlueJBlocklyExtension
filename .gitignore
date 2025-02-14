@@ -7,3 +7,5 @@ Blockly/custom-generator-codelab/node_modules/.bin/
 logs/
 
 *.bluej
+
+target/
