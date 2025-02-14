@@ -83,7 +83,7 @@ public class BlueJBlocklyExtension extends Extension implements PackageListener
     {
         try
         {
-            return new URL("");
+            return new URL("https://valentin-herrmann.com");
         }
         catch (Exception var2)
         {

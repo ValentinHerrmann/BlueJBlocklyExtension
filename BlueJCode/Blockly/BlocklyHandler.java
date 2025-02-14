@@ -27,6 +27,7 @@ public class BlocklyHandler
             Logging.log("Opening Blockly from: "+ Config.BlocklyHtmlPath());
 
             restAPI = new RestAPI(this);
+            Logging.log("Creating MainFrame");
             frame = new MainFrame(Config.BlocklyHtmlPath(), false, false, new String[]{Config.BlocklyHtmlPath()});
 
             Logging.log("<<< Init BlocklyHandler successful");
