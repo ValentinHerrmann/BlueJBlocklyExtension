@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 public class Config
 {
-    private static final String version = "1.5.2";
+    private static final String version = "1.5.3";
     private static final String blocklyHtmlPath = "/Blockly/custom-generator-codelab/dist/index.html";
     private static final String jcefBundlePath = "C:\\Users\\Public\\jcef-bundle\\";
     private static String libPath = null;
