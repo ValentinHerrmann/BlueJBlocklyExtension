@@ -16,7 +16,7 @@ jobs:
 
       - name: Build with Maven
         run: |
-          mvn install:install-file -Dfile=lib\bluej\extensions2\5.0.0\extensions2.jar -DgroupId=bluej -DartifactId=extensions2  -Dversion=5.0.0 -DgeneratePom=true
+          mvn install:install-file -Dfile=lib/bluej/extensions2/5.0.0/extensions2.jar -DgroupId=bluej -DartifactId=extensions2  -Dversion=5.0.0 -DgeneratePom=true
           mvn --batch-mode --update-snapshots clean
           mvn --batch-mode --update-snapshots package
 
