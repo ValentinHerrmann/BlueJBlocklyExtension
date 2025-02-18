@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>BBE</groupId>
   <artifactId>BBE</artifactId>
-  <version>5.0.1</version>
+  <version>5.0.0</version>
   <packaging>jar</packaging>
   <name>BBE</name>
   <url>https://valentin-herrmann.com</url>
@@ -50,6 +50,11 @@
       <artifactId>junit-jupiter</artifactId>
       <version>5.8.1</version>
       <scope>compile</scope>
+    </dependency>
+    <dependency>
+      <groupId>bluej</groupId>
+      <artifactId>bluejext2</artifactId>
+      <version>5.0.0</version>
     </dependency>
     <dependency>
       <groupId>com.sun.net.httpserver</groupId>
