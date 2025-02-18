@@ -17,8 +17,8 @@ jobs:
       - name: Build with Maven
         run: |
           ls -l
-          mvn --batch-mode --update-snapshots clean install
-          mvn --batch-mode --update-snapshots verify
+          mvn --batch-mode --update-snapshots clean
+          mvn --batch-mode --update-snapshots package
 
       - name: Create staging directory
         run: mkdir -p staging && cp target/*.jar staging
