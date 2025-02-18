@@ -2,8 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/javafx-sdk-21.0.1" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/jcefsampleapp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/resources/Blockly" vcs="Git" />
   </component>
 </project>
