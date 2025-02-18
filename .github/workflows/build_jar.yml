@@ -17,6 +17,8 @@ jobs:
       - name: Build with Maven
         run: |
           ls -l
+          cd lib
+          ls -l
           mvn --batch-mode --update-snapshots clean
           mvn --batch-mode --update-snapshots package
 
