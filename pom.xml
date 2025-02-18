@@ -55,6 +55,8 @@
       <groupId>bluej</groupId>
       <artifactId>bluejext2</artifactId>
       <version>5.0.0</version>
+      <systemPath>${project.basedir}/BlueJCode/bluejext2.jar</systemPath>
+      <scope>system</scope>
     </dependency>
     <dependency>
       <groupId>com.sun.net.httpserver</groupId>
