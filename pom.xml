@@ -91,6 +91,9 @@
       <resource>
         <directory>resources</directory>
       </resource>
+      <resource>
+        <directory>jcef-bundle</directory>
+      </resource>
     </resources>
     <plugins>
       <plugin>
