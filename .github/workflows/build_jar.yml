@@ -11,9 +11,12 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
       - name: Pull LFS
         run: |
+          ls -l
           cd jcef-bundle
+          ls -l
           du -sh ./*  
           git lfs pull
+          ls -l
           du -sh ./*  
 
       - name: Set up JDK 17
