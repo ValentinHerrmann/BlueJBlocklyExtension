@@ -1,6 +1,3 @@
 [submodule "resources/Blockly"]
 	path = resources/Blockly
 	url = https://github.com/ValentinHerrmann/B2J_dist.git
-[submodule "jcef-bundle"]
-	path = jcef-bundle
-	url = https://github.com/ValentinHerrmann/jcef-bundle.git
