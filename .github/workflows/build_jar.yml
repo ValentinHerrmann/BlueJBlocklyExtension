@@ -8,6 +8,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
+          lfs: 'true'
           submodules: 'true'
           ssh-key: ${{ secrets.PAT_TOKEN }}
 
