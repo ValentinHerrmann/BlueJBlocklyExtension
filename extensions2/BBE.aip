@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="21.7.1" version="21.7.1" Modules="simple" RootPath="." Language="de" Id="{201ED0E9-D2E3-480D-9352-67A957C4DE36}">
-  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
-    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
-  </COMPONENT>
+<DOCUMENT Type="Advanced Installer" CreateVersion="21.7.1" version="22.4" Modules="simple" RootPath="." Language="de" Id="{201ED0E9-D2E3-480D-9352-67A957C4DE36}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
@@ -29,16 +26,16 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="Blocklz_Dir" Directory_Parent="lib_Dir" DefaultDir="Blockly"/>
+    <ROW Directory="PublicFolder" Directory_Parent="TARGETDIR" DefaultDir="PUBLIC~1|PublicFolder" IsPseudoRoot="1"/>
     <ROW Directory="System64Folder" Directory_Parent="TARGETDIR" DefaultDir="SYSTEM~2|System64Folder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
-    <ROW Directory="customgeneratorcodelab_Dir" Directory_Parent="Blocklz_Dir" DefaultDir="CUSTOM~1|custom-generator-codelab"/>
-    <ROW Directory="dist_Dir" Directory_Parent="customgeneratorcodelab_Dir" DefaultDir="dist"/>
     <ROW Directory="extensions2_Dir" Directory_Parent="lib_Dir" DefaultDir="EXTENS~1|extensions2"/>
     <ROW Directory="jcefbundle_1_Dir" Directory_Parent="System64Folder" DefaultDir="JCEF-B~1|jcef-bundle"/>
+    <ROW Directory="jcefbundle_3_Dir" Directory_Parent="PublicFolder" DefaultDir="JCEF-B~1|jcef-bundle"/>
     <ROW Directory="jcefbundle_Dir" Directory_Parent="APPDIR" DefaultDir="JCEF-B~1|jcef-bundle"/>
     <ROW Directory="lib_Dir" Directory_Parent="APPDIR" DefaultDir="lib"/>
-    <ROW Directory="locales_1_Dir" Directory_Parent="jcefbundle_1_Dir" DefaultDir="locales"/>
-    <ROW Directory="locales_Dir" Directory_Parent="jcefbundle_Dir" DefaultDir="locales"/>
+    <ROW Directory="locales_2_Dir" Directory_Parent="jcefbundle_1_Dir" DefaultDir="locales"/>
+    <ROW Directory="locales_5_Dir" Directory_Parent="jcefbundle_Dir" DefaultDir="locales"/>
     <ROW Directory="userlib_Dir" Directory_Parent="lib_Dir" DefaultDir="userlib"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.SideBySideGuidComponent">
@@ -47,200 +44,232 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{CFC5DC2C-60F3-4E16-BB9D-B23EAB805BB2}" Directory_="APPDIR" Attributes="0"/>
-    <ROW Component="GameboardVorlage.jar" ComponentId="{5A24C2BA-4CA9-446A-9F25-AEEBCB5C0628}" Directory_="userlib_Dir" Attributes="0" KeyPath="GameboardVorlage.jar" Type="0"/>
+    <ROW Component="BluejBlocklyExtension.jar" ComponentId="{C4621E0B-6796-45C5-920D-D1405A85A45E}" Directory_="extensions2_Dir" Attributes="0" KeyPath="BluejBlocklyExtension.jar" Type="0"/>
+    <ROW Component="GameboardVorlage.jar" ComponentId="{768847D8-6C12-4E97-B73B-3DB15BABB5DB}" Directory_="userlib_Dir" Attributes="0" KeyPath="GameboardVorlage.jar" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{01E1DAA4-77B1-45C4-A717-49BFFC0FFDAA}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
-    <ROW Component="af.pak" ComponentId="{27665E7C-6536-496D-B6E2-E026576903D3}" Directory_="locales_Dir" Attributes="0" KeyPath="af.pak" Type="0"/>
-    <ROW Component="af.pak_1" ComponentId="{E6EA3E2F-7602-40FD-AA8C-77A3DC861996}" Directory_="locales_1_Dir" Attributes="0" KeyPath="af.pak_1" Type="0"/>
-    <ROW Component="bbe.jar" ComponentId="{9A4DCB55-CD11-443D-879E-E32F68498783}" Directory_="extensions2_Dir" Attributes="0" KeyPath="bbe.jar" Type="0"/>
-    <ROW Component="build_meta.json" ComponentId="{EA1D5213-94DE-4EA8-B207-E671F0228291}" Directory_="jcefbundle_Dir" Attributes="0" KeyPath="build_meta.json" Type="0"/>
-    <ROW Component="build_meta.json_1" ComponentId="{2AC9E6F9-59A7-43A0-9631-190FF1BC8BB5}" Directory_="jcefbundle_1_Dir" Attributes="0" KeyPath="build_meta.json_1" Type="0"/>
-    <ROW Component="bundle.js" ComponentId="{D229F99B-894C-4041-B11A-82B09D725B44}" Directory_="dist_Dir" Attributes="0" KeyPath="bundle.js" Type="0"/>
-    <ROW Component="chrome_elf.dll" ComponentId="{8A316C1B-3DE2-4D46-B3B3-D0EF5699104D}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="chrome_elf.dll"/>
-    <ROW Component="chrome_elf.dll_1" ComponentId="{653E9E1C-5415-4FFC-AEF3-7BFDA49CA6A1}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="chrome_elf.dll_1"/>
-    <ROW Component="customgeneratorcodelab" ComponentId="{6DC3A95F-6973-4F85-B88E-49E76FDE7314}" Directory_="customgeneratorcodelab_Dir" Attributes="0"/>
-    <ROW Component="d3dcompiler_47.dll" ComponentId="{14D73C28-5B40-4861-9E7B-1576FE3E708F}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll"/>
-    <ROW Component="d3dcompiler_47.dll_1" ComponentId="{26D1B7DD-FC93-4050-BDC6-686F6D394F34}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll_1"/>
-    <ROW Component="jcef.dll" ComponentId="{DCC1C2AE-F1A8-45A5-AD50-CC71257E6E5C}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="jcef.dll"/>
-    <ROW Component="jcef.dll_1" ComponentId="{9510ACEC-E7D7-4FC9-99A5-2E9DC0EC968D}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="jcef.dll_1"/>
-    <ROW Component="jcef_helper.exe" ComponentId="{9F7CE24B-C999-4B2D-8592-54A87340C939}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="jcef_helper.exe"/>
-    <ROW Component="jcef_helper.exe_1" ComponentId="{33B4730F-CE5E-4C2D-AEDB-94E810128D75}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="jcef_helper.exe_1"/>
-    <ROW Component="libEGL.dll" ComponentId="{093A07E8-08DF-4EB3-99DB-BB1C8C47391C}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="libEGL.dll"/>
-    <ROW Component="libEGL.dll_1" ComponentId="{33245868-CED0-4EE4-B9DC-2CFC54579E4F}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="libEGL.dll_1"/>
-    <ROW Component="libGLESv2.dll" ComponentId="{29B42ABB-05F0-4D9B-9A7C-F120CB9F6598}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="libGLESv2.dll"/>
-    <ROW Component="libGLESv2.dll_1" ComponentId="{C86EB35C-1456-4DE5-A1BE-6CCF65C7AE0F}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="libGLESv2.dll_1"/>
-    <ROW Component="libcef.dll" ComponentId="{C2929E59-E825-45F3-B1D4-1E9AACA8A6AD}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="libcef.dll"/>
-    <ROW Component="libcef.dll_1" ComponentId="{9F0F3B05-F34F-4792-8988-3B736E9A22BD}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="libcef.dll_1"/>
-    <ROW Component="vk_swiftshader.dll" ComponentId="{76849271-B412-4DC6-B3A4-04A1412E985D}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="vk_swiftshader.dll"/>
-    <ROW Component="vk_swiftshader.dll_1" ComponentId="{7975ED20-4A9A-4C0C-BDDD-1D6549F52FE5}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="vk_swiftshader.dll_1"/>
-    <ROW Component="vulkan1.dll" ComponentId="{A3CA4993-3EE1-4204-B4BB-DC430652B62E}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="vulkan1.dll"/>
-    <ROW Component="vulkan1.dll_1" ComponentId="{2FA33A28-2B23-4263-A652-7D0FEDDDDD9E}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="vulkan1.dll_1"/>
+    <ROW Component="af.pak_1" ComponentId="{1752C292-48A3-4E89-A799-0F98F25C4DF2}" Directory_="locales_2_Dir" Attributes="0" KeyPath="af.pak_1" Type="0"/>
+    <ROW Component="build_meta.json" ComponentId="{3081C6B0-3CF5-49CE-B5D7-F9DDB9715D57}" Directory_="jcefbundle_Dir" Attributes="0" KeyPath="build_meta.json" Type="0"/>
+    <ROW Component="build_meta.json_1" ComponentId="{6AEF88B9-BB6A-42A7-A649-A92C813FC389}" Directory_="jcefbundle_1_Dir" Attributes="0" KeyPath="build_meta.json_1" Type="0"/>
+    <ROW Component="build_meta.json_2" ComponentId="{ABA15137-109A-463C-A925-940DAE612E7C}" Directory_="jcefbundle_3_Dir" Attributes="0" KeyPath="build_meta.json_2" Type="0"/>
+    <ROW Component="bundle.js_1" ComponentId="{9724B47A-0DC5-4C85-921B-B56BD38FDF3A}" Directory_="Blocklz_Dir" Attributes="0" KeyPath="bundle.js_1" Type="0"/>
+    <ROW Component="chrome_elf.dll" ComponentId="{FD80491C-8C29-4FB3-A8F8-B00F525CAA9C}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="chrome_elf.dll"/>
+    <ROW Component="chrome_elf.dll_1" ComponentId="{C2994E70-E69F-470F-B598-B0CF018F95F5}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="chrome_elf.dll_1"/>
+    <ROW Component="chrome_elf.dll_2" ComponentId="{A27688ED-BE59-41BF-BA4F-53E39B6E1C6F}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="chrome_elf.dll_2"/>
+    <ROW Component="d3dcompiler_47.dll" ComponentId="{211AA900-FCC3-4176-A66A-BB0FA847C7A0}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll"/>
+    <ROW Component="d3dcompiler_47.dll_1" ComponentId="{17FCB027-1353-4855-B568-D93A9D08D615}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll_1"/>
+    <ROW Component="d3dcompiler_47.dll_2" ComponentId="{FD3669B6-2827-479A-A04D-6A5B0B2A77C5}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll_2"/>
+    <ROW Component="jcef.dll" ComponentId="{93FC7948-92D6-4672-B1B6-3511DF2EA0C9}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="jcef.dll"/>
+    <ROW Component="jcef.dll_1" ComponentId="{BD5290AF-5D87-4EA1-8285-186DD0799D6B}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="jcef.dll_1"/>
+    <ROW Component="jcef.dll_2" ComponentId="{D8EAEECD-8B5F-4C39-A6C8-FB796B669604}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="jcef.dll_2"/>
+    <ROW Component="jcef_helper.exe" ComponentId="{9BFBB295-8140-47C7-B2EC-9475000DC67E}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="jcef_helper.exe"/>
+    <ROW Component="jcef_helper.exe_1" ComponentId="{814D0506-3EBE-4F5D-A8B2-7252C333D761}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="jcef_helper.exe_1"/>
+    <ROW Component="jcef_helper.exe_2" ComponentId="{F8B6F28D-B19E-49E0-9DF8-629D01FA8869}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="jcef_helper.exe_2"/>
+    <ROW Component="libEGL.dll" ComponentId="{BAE9849E-9AB2-493C-948F-C25143F44347}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="libEGL.dll"/>
+    <ROW Component="libEGL.dll_1" ComponentId="{4EF9BDC0-38A6-4BD4-91F4-F3CA89AF04B4}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="libEGL.dll_1"/>
+    <ROW Component="libEGL.dll_2" ComponentId="{ED2154BE-BD59-4103-830F-623EA902FE2E}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="libEGL.dll_2"/>
+    <ROW Component="libGLESv2.dll" ComponentId="{D4A10244-47DB-4BBE-91C7-72EB986797F6}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="libGLESv2.dll"/>
+    <ROW Component="libGLESv2.dll_1" ComponentId="{60CC57E2-BF6A-4FCD-B7E0-18122EDEACA6}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="libGLESv2.dll_1"/>
+    <ROW Component="libGLESv2.dll_2" ComponentId="{ADADB68A-6254-4BA1-9EA7-0B7206119719}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="libGLESv2.dll_2"/>
+    <ROW Component="libcef.dll" ComponentId="{B229869D-5877-468C-B40F-9DE7658E17AF}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="libcef.dll"/>
+    <ROW Component="libcef.dll_1" ComponentId="{746F184B-767D-46A5-80B7-D7CAC5A169EE}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="libcef.dll_1"/>
+    <ROW Component="libcef.dll_2" ComponentId="{582E267E-6741-4C82-A2DD-CA4482D03F60}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="libcef.dll_2"/>
+    <ROW Component="vk_swiftshader.dll" ComponentId="{8F1A8FC2-5210-4EA1-9558-CF838F883AFC}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="vk_swiftshader.dll"/>
+    <ROW Component="vk_swiftshader.dll_1" ComponentId="{2C1B3329-D416-4BD9-9214-B593F106D1ED}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="vk_swiftshader.dll_1"/>
+    <ROW Component="vk_swiftshader.dll_2" ComponentId="{FF0FEE09-95F5-44A8-BB05-D2C397CB0987}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="vk_swiftshader.dll_2"/>
+    <ROW Component="vulkan1.dll" ComponentId="{A4B10E96-2410-46B0-910E-70B8285E9AA6}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="vulkan1.dll"/>
+    <ROW Component="vulkan1.dll_1" ComponentId="{3A49CA2C-953C-4ABF-AE25-50E68B63BE42}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="vulkan1.dll_1"/>
+    <ROW Component="vulkan1.dll_2" ComponentId="{E8997773-AE0C-47A8-A473-C236D0DCAC56}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="vulkan1.dll_2"/>
+    <ROW Component="zhTW.pak" ComponentId="{BAB65CFE-CAB7-449D-9D12-752EE3A233B9}" Directory_="locales_5_Dir" Attributes="0" KeyPath="zhTW.pak" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="bbe.jar" Component_="bbe.jar" FileName="bbe.jar" Attributes="0" SourcePath="bbe.jar" SelfReg="false"/>
-    <ROW File="bundle.js" Component_="bundle.js" FileName="bundle.js" Attributes="0" SourcePath="..\Blockly\custom-generator-codelab\dist\bundle.js" SelfReg="false"/>
-    <ROW File="bundle.js.LICENSE.txt" Component_="bundle.js" FileName="BUNDLE~1.TXT|bundle.js.LICENSE.txt" Attributes="0" SourcePath="..\Blockly\custom-generator-codelab\dist\bundle.js.LICENSE.txt" SelfReg="false"/>
-    <ROW File="index.html" Component_="bundle.js" FileName="INDEX~1.HTM|index.html" Attributes="0" SourcePath="..\Blockly\custom-generator-codelab\dist\index.html" SelfReg="false"/>
-    <ROW File="build_meta.json" Component_="build_meta.json" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\build_meta.json" SelfReg="false"/>
-    <ROW File="chrome_100_percent.pak" Component_="build_meta.json" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
-    <ROW File="chrome_200_percent.pak" Component_="build_meta.json" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
-    <ROW File="chrome_elf.dll" Component_="chrome_elf.dll" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
-    <ROW File="d3dcompiler_47.dll" Component_="d3dcompiler_47.dll" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
-    <ROW File="gluegen.LICENSE.txt" Component_="build_meta.json" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
-    <ROW File="icudtl.dat" Component_="build_meta.json" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\icudtl.dat" SelfReg="false"/>
-    <ROW File="install.lock" Component_="build_meta.json" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\install.lock" SelfReg="false"/>
-    <ROW File="jcef.dll" Component_="jcef.dll" FileName="jcef.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\jcef.dll" SelfReg="false"/>
-    <ROW File="jcef_helper.exe" Component_="jcef_helper.exe" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="jogl.LICENSE.txt" Component_="build_meta.json" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
-    <ROW File="libcef.dll" Component_="libcef.dll" FileName="libcef.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\libcef.dll" SelfReg="false"/>
-    <ROW File="libEGL.dll" Component_="libEGL.dll" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\libEGL.dll" SelfReg="false"/>
-    <ROW File="libGLESv2.dll" Component_="libGLESv2.dll" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
-    <ROW File="LICENSE.txt" Component_="build_meta.json" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\LICENSE.txt" SelfReg="false"/>
-    <ROW File="af.pak" Component_="af.pak" FileName="af.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\af.pak" SelfReg="false"/>
-    <ROW File="am.pak" Component_="af.pak" FileName="am.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\am.pak" SelfReg="false"/>
-    <ROW File="ar.pak" Component_="af.pak" FileName="ar.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ar.pak" SelfReg="false"/>
-    <ROW File="bg.pak" Component_="af.pak" FileName="bg.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\bg.pak" SelfReg="false"/>
-    <ROW File="bn.pak" Component_="af.pak" FileName="bn.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\bn.pak" SelfReg="false"/>
-    <ROW File="ca.pak" Component_="af.pak" FileName="ca.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ca.pak" SelfReg="false"/>
-    <ROW File="cs.pak" Component_="af.pak" FileName="cs.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\cs.pak" SelfReg="false"/>
-    <ROW File="da.pak" Component_="af.pak" FileName="da.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\da.pak" SelfReg="false"/>
-    <ROW File="de.pak" Component_="af.pak" FileName="de.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\de.pak" SelfReg="false"/>
-    <ROW File="el.pak" Component_="af.pak" FileName="el.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\el.pak" SelfReg="false"/>
-    <ROW File="enGB.pak" Component_="af.pak" FileName="en-GB.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\en-GB.pak" SelfReg="false"/>
-    <ROW File="enUS.pak" Component_="af.pak" FileName="en-US.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\en-US.pak" SelfReg="false"/>
-    <ROW File="es419.pak" Component_="af.pak" FileName="es-419.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\es-419.pak" SelfReg="false"/>
-    <ROW File="es.pak" Component_="af.pak" FileName="es.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\es.pak" SelfReg="false"/>
-    <ROW File="et.pak" Component_="af.pak" FileName="et.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\et.pak" SelfReg="false"/>
-    <ROW File="fa.pak" Component_="af.pak" FileName="fa.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fa.pak" SelfReg="false"/>
-    <ROW File="fi.pak" Component_="af.pak" FileName="fi.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fi.pak" SelfReg="false"/>
-    <ROW File="fil.pak" Component_="af.pak" FileName="fil.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fil.pak" SelfReg="false"/>
-    <ROW File="fr.pak" Component_="af.pak" FileName="fr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fr.pak" SelfReg="false"/>
-    <ROW File="gu.pak" Component_="af.pak" FileName="gu.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\gu.pak" SelfReg="false"/>
-    <ROW File="he.pak" Component_="af.pak" FileName="he.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\he.pak" SelfReg="false"/>
-    <ROW File="hi.pak" Component_="af.pak" FileName="hi.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\hi.pak" SelfReg="false"/>
-    <ROW File="hr.pak" Component_="af.pak" FileName="hr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\hr.pak" SelfReg="false"/>
-    <ROW File="hu.pak" Component_="af.pak" FileName="hu.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\hu.pak" SelfReg="false"/>
-    <ROW File="id.pak" Component_="af.pak" FileName="id.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\id.pak" SelfReg="false"/>
-    <ROW File="it.pak" Component_="af.pak" FileName="it.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\it.pak" SelfReg="false"/>
-    <ROW File="ja.pak" Component_="af.pak" FileName="ja.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ja.pak" SelfReg="false"/>
-    <ROW File="kn.pak" Component_="af.pak" FileName="kn.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\kn.pak" SelfReg="false"/>
-    <ROW File="ko.pak" Component_="af.pak" FileName="ko.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ko.pak" SelfReg="false"/>
-    <ROW File="lt.pak" Component_="af.pak" FileName="lt.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\lt.pak" SelfReg="false"/>
-    <ROW File="lv.pak" Component_="af.pak" FileName="lv.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\lv.pak" SelfReg="false"/>
-    <ROW File="ml.pak" Component_="af.pak" FileName="ml.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ml.pak" SelfReg="false"/>
-    <ROW File="mr.pak" Component_="af.pak" FileName="mr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\mr.pak" SelfReg="false"/>
-    <ROW File="ms.pak" Component_="af.pak" FileName="ms.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ms.pak" SelfReg="false"/>
-    <ROW File="nb.pak" Component_="af.pak" FileName="nb.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\nb.pak" SelfReg="false"/>
-    <ROW File="nl.pak" Component_="af.pak" FileName="nl.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\nl.pak" SelfReg="false"/>
-    <ROW File="pl.pak" Component_="af.pak" FileName="pl.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\pl.pak" SelfReg="false"/>
-    <ROW File="ptBR.pak" Component_="af.pak" FileName="pt-BR.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\pt-BR.pak" SelfReg="false"/>
-    <ROW File="ptPT.pak" Component_="af.pak" FileName="pt-PT.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\pt-PT.pak" SelfReg="false"/>
-    <ROW File="ro.pak" Component_="af.pak" FileName="ro.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ro.pak" SelfReg="false"/>
-    <ROW File="ru.pak" Component_="af.pak" FileName="ru.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ru.pak" SelfReg="false"/>
-    <ROW File="sk.pak" Component_="af.pak" FileName="sk.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sk.pak" SelfReg="false"/>
-    <ROW File="sl.pak" Component_="af.pak" FileName="sl.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sl.pak" SelfReg="false"/>
-    <ROW File="sr.pak" Component_="af.pak" FileName="sr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sr.pak" SelfReg="false"/>
-    <ROW File="sv.pak" Component_="af.pak" FileName="sv.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sv.pak" SelfReg="false"/>
-    <ROW File="sw.pak" Component_="af.pak" FileName="sw.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sw.pak" SelfReg="false"/>
-    <ROW File="ta.pak" Component_="af.pak" FileName="ta.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ta.pak" SelfReg="false"/>
-    <ROW File="te.pak" Component_="af.pak" FileName="te.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\te.pak" SelfReg="false"/>
-    <ROW File="th.pak" Component_="af.pak" FileName="th.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\th.pak" SelfReg="false"/>
-    <ROW File="tr.pak" Component_="af.pak" FileName="tr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\tr.pak" SelfReg="false"/>
-    <ROW File="uk.pak" Component_="af.pak" FileName="uk.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\uk.pak" SelfReg="false"/>
-    <ROW File="ur.pak" Component_="af.pak" FileName="ur.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ur.pak" SelfReg="false"/>
-    <ROW File="vi.pak" Component_="af.pak" FileName="vi.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\vi.pak" SelfReg="false"/>
-    <ROW File="zhCN.pak" Component_="af.pak" FileName="zh-CN.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\zh-CN.pak" SelfReg="false"/>
-    <ROW File="zhTW.pak" Component_="af.pak" FileName="zh-TW.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\zh-TW.pak" SelfReg="false"/>
-    <ROW File="package.bluej" Component_="build_meta.json" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\package.bluej" SelfReg="false"/>
-    <ROW File="README.txt" Component_="build_meta.json" FileName="README.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\README.txt" SelfReg="false"/>
-    <ROW File="resources.pak" Component_="build_meta.json" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\resources.pak" SelfReg="false"/>
-    <ROW File="snapshot_blob.bin" Component_="build_meta.json" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
-    <ROW File="v8_context_snapshot.bin" Component_="build_meta.json" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
-    <ROW File="vk_swiftshader.dll" Component_="vk_swiftshader.dll" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\vk_swiftshader.dll" SelfReg="false"/>
-    <ROW File="vk_swiftshader_icd.json" Component_="build_meta.json" FileName="VK_SWI~1.JSO|vk_swiftshader_icd.json" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\vk_swiftshader_icd.json" SelfReg="false"/>
-    <ROW File="vulkan1.dll" Component_="vulkan1.dll" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
-    <ROW File="build_meta.json_1" Component_="build_meta.json_1" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\build_meta.json" SelfReg="false"/>
-    <ROW File="chrome_100_percent.pak_1" Component_="build_meta.json_1" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
-    <ROW File="chrome_200_percent.pak_1" Component_="build_meta.json_1" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
-    <ROW File="chrome_elf.dll_1" Component_="chrome_elf.dll_1" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
-    <ROW File="d3dcompiler_47.dll_1" Component_="d3dcompiler_47.dll_1" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
-    <ROW File="gluegen.LICENSE.txt_1" Component_="build_meta.json_1" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
-    <ROW File="icudtl.dat_1" Component_="build_meta.json_1" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\icudtl.dat" SelfReg="false"/>
-    <ROW File="install.lock_1" Component_="build_meta.json_1" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\install.lock" SelfReg="false"/>
-    <ROW File="jcef.dll_1" Component_="jcef.dll_1" FileName="jcef.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\jcef.dll" SelfReg="false"/>
-    <ROW File="jcef_helper.exe_1" Component_="jcef_helper.exe_1" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="jogl.LICENSE.txt_1" Component_="build_meta.json_1" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
-    <ROW File="libcef.dll_1" Component_="libcef.dll_1" FileName="libcef.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\libcef.dll" SelfReg="false"/>
-    <ROW File="libEGL.dll_1" Component_="libEGL.dll_1" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\libEGL.dll" SelfReg="false"/>
-    <ROW File="libGLESv2.dll_1" Component_="libGLESv2.dll_1" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
-    <ROW File="LICENSE.txt_26" Component_="build_meta.json_1" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\LICENSE.txt" SelfReg="false"/>
-    <ROW File="af.pak_1" Component_="af.pak_1" FileName="af.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\af.pak" SelfReg="false"/>
-    <ROW File="am.pak_1" Component_="af.pak_1" FileName="am.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\am.pak" SelfReg="false"/>
-    <ROW File="ar.pak_1" Component_="af.pak_1" FileName="ar.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ar.pak" SelfReg="false"/>
-    <ROW File="bg.pak_1" Component_="af.pak_1" FileName="bg.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\bg.pak" SelfReg="false"/>
-    <ROW File="bn.pak_1" Component_="af.pak_1" FileName="bn.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\bn.pak" SelfReg="false"/>
-    <ROW File="ca.pak_1" Component_="af.pak_1" FileName="ca.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ca.pak" SelfReg="false"/>
-    <ROW File="cs.pak_1" Component_="af.pak_1" FileName="cs.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\cs.pak" SelfReg="false"/>
-    <ROW File="da.pak_1" Component_="af.pak_1" FileName="da.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\da.pak" SelfReg="false"/>
-    <ROW File="de.pak_1" Component_="af.pak_1" FileName="de.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\de.pak" SelfReg="false"/>
-    <ROW File="el.pak_1" Component_="af.pak_1" FileName="el.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\el.pak" SelfReg="false"/>
-    <ROW File="enGB.pak_1" Component_="af.pak_1" FileName="en-GB.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\en-GB.pak" SelfReg="false"/>
-    <ROW File="enUS.pak_1" Component_="af.pak_1" FileName="en-US.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\en-US.pak" SelfReg="false"/>
-    <ROW File="es419.pak_1" Component_="af.pak_1" FileName="es-419.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\es-419.pak" SelfReg="false"/>
-    <ROW File="es.pak_1" Component_="af.pak_1" FileName="es.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\es.pak" SelfReg="false"/>
-    <ROW File="et.pak_1" Component_="af.pak_1" FileName="et.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\et.pak" SelfReg="false"/>
-    <ROW File="fa.pak_1" Component_="af.pak_1" FileName="fa.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fa.pak" SelfReg="false"/>
-    <ROW File="fi.pak_1" Component_="af.pak_1" FileName="fi.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fi.pak" SelfReg="false"/>
-    <ROW File="fil.pak_1" Component_="af.pak_1" FileName="fil.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fil.pak" SelfReg="false"/>
-    <ROW File="fr.pak_1" Component_="af.pak_1" FileName="fr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\fr.pak" SelfReg="false"/>
-    <ROW File="gu.pak_1" Component_="af.pak_1" FileName="gu.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\gu.pak" SelfReg="false"/>
-    <ROW File="he.pak_1" Component_="af.pak_1" FileName="he.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\he.pak" SelfReg="false"/>
-    <ROW File="hi.pak_1" Component_="af.pak_1" FileName="hi.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\hi.pak" SelfReg="false"/>
-    <ROW File="hr.pak_1" Component_="af.pak_1" FileName="hr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\hr.pak" SelfReg="false"/>
-    <ROW File="hu.pak_1" Component_="af.pak_1" FileName="hu.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\hu.pak" SelfReg="false"/>
-    <ROW File="id.pak_1" Component_="af.pak_1" FileName="id.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\id.pak" SelfReg="false"/>
-    <ROW File="it.pak_1" Component_="af.pak_1" FileName="it.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\it.pak" SelfReg="false"/>
-    <ROW File="ja.pak_1" Component_="af.pak_1" FileName="ja.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ja.pak" SelfReg="false"/>
-    <ROW File="kn.pak_1" Component_="af.pak_1" FileName="kn.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\kn.pak" SelfReg="false"/>
-    <ROW File="ko.pak_1" Component_="af.pak_1" FileName="ko.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ko.pak" SelfReg="false"/>
-    <ROW File="lt.pak_1" Component_="af.pak_1" FileName="lt.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\lt.pak" SelfReg="false"/>
-    <ROW File="lv.pak_1" Component_="af.pak_1" FileName="lv.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\lv.pak" SelfReg="false"/>
-    <ROW File="ml.pak_1" Component_="af.pak_1" FileName="ml.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ml.pak" SelfReg="false"/>
-    <ROW File="mr.pak_1" Component_="af.pak_1" FileName="mr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\mr.pak" SelfReg="false"/>
-    <ROW File="ms.pak_1" Component_="af.pak_1" FileName="ms.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ms.pak" SelfReg="false"/>
-    <ROW File="nb.pak_1" Component_="af.pak_1" FileName="nb.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\nb.pak" SelfReg="false"/>
-    <ROW File="nl.pak_1" Component_="af.pak_1" FileName="nl.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\nl.pak" SelfReg="false"/>
-    <ROW File="pl.pak_1" Component_="af.pak_1" FileName="pl.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\pl.pak" SelfReg="false"/>
-    <ROW File="ptBR.pak_1" Component_="af.pak_1" FileName="pt-BR.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\pt-BR.pak" SelfReg="false"/>
-    <ROW File="ptPT.pak_1" Component_="af.pak_1" FileName="pt-PT.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\pt-PT.pak" SelfReg="false"/>
-    <ROW File="ro.pak_1" Component_="af.pak_1" FileName="ro.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ro.pak" SelfReg="false"/>
-    <ROW File="ru.pak_1" Component_="af.pak_1" FileName="ru.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ru.pak" SelfReg="false"/>
-    <ROW File="sk.pak_1" Component_="af.pak_1" FileName="sk.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sk.pak" SelfReg="false"/>
-    <ROW File="sl.pak_1" Component_="af.pak_1" FileName="sl.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sl.pak" SelfReg="false"/>
-    <ROW File="sr.pak_1" Component_="af.pak_1" FileName="sr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sr.pak" SelfReg="false"/>
-    <ROW File="sv.pak_1" Component_="af.pak_1" FileName="sv.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sv.pak" SelfReg="false"/>
-    <ROW File="sw.pak_1" Component_="af.pak_1" FileName="sw.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\sw.pak" SelfReg="false"/>
-    <ROW File="ta.pak_1" Component_="af.pak_1" FileName="ta.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ta.pak" SelfReg="false"/>
-    <ROW File="te.pak_1" Component_="af.pak_1" FileName="te.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\te.pak" SelfReg="false"/>
-    <ROW File="th.pak_1" Component_="af.pak_1" FileName="th.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\th.pak" SelfReg="false"/>
-    <ROW File="tr.pak_1" Component_="af.pak_1" FileName="tr.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\tr.pak" SelfReg="false"/>
-    <ROW File="uk.pak_1" Component_="af.pak_1" FileName="uk.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\uk.pak" SelfReg="false"/>
-    <ROW File="ur.pak_1" Component_="af.pak_1" FileName="ur.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\ur.pak" SelfReg="false"/>
-    <ROW File="vi.pak_1" Component_="af.pak_1" FileName="vi.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\vi.pak" SelfReg="false"/>
-    <ROW File="zhCN.pak_1" Component_="af.pak_1" FileName="zh-CN.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\zh-CN.pak" SelfReg="false"/>
-    <ROW File="zhTW.pak_1" Component_="af.pak_1" FileName="zh-TW.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\locales\zh-TW.pak" SelfReg="false"/>
-    <ROW File="package.bluej_1" Component_="build_meta.json_1" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\package.bluej" SelfReg="false"/>
-    <ROW File="README.txt_1" Component_="build_meta.json_1" FileName="README.txt" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\README.txt" SelfReg="false"/>
-    <ROW File="resources.pak_1" Component_="build_meta.json_1" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\resources.pak" SelfReg="false"/>
-    <ROW File="snapshot_blob.bin_1" Component_="build_meta.json_1" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
-    <ROW File="v8_context_snapshot.bin_1" Component_="build_meta.json_1" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
-    <ROW File="vk_swiftshader.dll_1" Component_="vk_swiftshader.dll_1" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\vk_swiftshader.dll" SelfReg="false"/>
-    <ROW File="vk_swiftshader_icd.json_1" Component_="build_meta.json_1" FileName="VK_SWI~1.JSO|vk_swiftshader_icd.json" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\vk_swiftshader_icd.json" SelfReg="false"/>
-    <ROW File="vulkan1.dll_1" Component_="vulkan1.dll_1" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcefsampleapp\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
-    <ROW File="GameboardVorlage.jar" Component_="GameboardVorlage.jar" FileName="GAMEBO~1.JAR|GameboardVorlage.jar" Attributes="0" SourcePath="..\Gameboard\GameboardVorlage.jar" SelfReg="false"/>
+    <ROW File="bundle.js_1" Component_="bundle.js_1" FileName="bundle.js" Attributes="0" SourcePath="..\resources\Blockly\bundle.js" SelfReg="false"/>
+    <ROW File="bundle.js.LICENSE.txt_1" Component_="bundle.js_1" FileName="BUNDLE~1.TXT|bundle.js.LICENSE.txt" Attributes="0" SourcePath="..\resources\Blockly\bundle.js.LICENSE.txt" SelfReg="false"/>
+    <ROW File="index.html_1" Component_="bundle.js_1" FileName="INDEX~1.HTM|index.html" Attributes="0" SourcePath="..\resources\Blockly\index.html" SelfReg="false"/>
+    <ROW File="BluejBlocklyExtension.jar" Component_="BluejBlocklyExtension.jar" FileName="BLUEJB~1.JAR|BluejBlocklyExtension.jar" Attributes="0" SourcePath="..\target\BluejBlocklyExtension.jar" SelfReg="false"/>
+    <ROW File="build_meta.json_1" Component_="build_meta.json_1" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
+    <ROW File="chrome_100_percent.pak_1" Component_="build_meta.json_1" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
+    <ROW File="chrome_200_percent.pak_1" Component_="build_meta.json_1" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
+    <ROW File="chrome_elf.dll_1" Component_="chrome_elf.dll_1" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
+    <ROW File="d3dcompiler_47.dll_1" Component_="d3dcompiler_47.dll_1" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
+    <ROW File="gluegen.LICENSE.txt_1" Component_="build_meta.json_1" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
+    <ROW File="icudtl.dat_1" Component_="build_meta.json_1" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcef-bundle\icudtl.dat" SelfReg="false"/>
+    <ROW File="install.lock_1" Component_="build_meta.json_1" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcef-bundle\install.lock" SelfReg="false"/>
+    <ROW File="jcef.dll_1" Component_="jcef.dll_1" FileName="jcef.dll" Attributes="0" SourcePath="..\jcef-bundle\jcef.dll" SelfReg="false"/>
+    <ROW File="jcef_helper.exe_1" Component_="jcef_helper.exe_1" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="jogl.LICENSE.txt_1" Component_="build_meta.json_1" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
+    <ROW File="libcef.dll_1" Component_="libcef.dll_1" FileName="libcef.dll" Attributes="0" SourcePath="..\jcef-bundle\libcef.dll" SelfReg="false"/>
+    <ROW File="libEGL.dll_1" Component_="libEGL.dll_1" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcef-bundle\libEGL.dll" SelfReg="false"/>
+    <ROW File="libGLESv2.dll_1" Component_="libGLESv2.dll_1" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
+    <ROW File="LICENSE.txt_1" Component_="build_meta.json_1" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\LICENSE.txt" SelfReg="false"/>
+    <ROW File="package.bluej_1" Component_="build_meta.json_1" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcef-bundle\package.bluej" SelfReg="false"/>
+    <ROW File="README.txt_1" Component_="build_meta.json_1" FileName="README.txt" Attributes="0" SourcePath="..\jcef-bundle\README.txt" SelfReg="false"/>
+    <ROW File="resources.pak_1" Component_="build_meta.json_1" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcef-bundle\resources.pak" SelfReg="false"/>
+    <ROW File="snapshot_blob.bin_1" Component_="build_meta.json_1" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
+    <ROW File="v8_context_snapshot.bin_1" Component_="build_meta.json_1" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
+    <ROW File="vk_swiftshader.dll_1" Component_="vk_swiftshader.dll_1" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader.dll" SelfReg="false"/>
+    <ROW File="vk_swiftshader_icd.json_1" Component_="build_meta.json_1" FileName="VK_SWI~1.JSO|vk_swiftshader_icd.json" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader_icd.json" SelfReg="false"/>
+    <ROW File="vulkan1.dll_1" Component_="vulkan1.dll_1" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
+    <ROW File="af.pak_1" Component_="af.pak_1" FileName="af.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\af.pak" SelfReg="false"/>
+    <ROW File="am.pak_1" Component_="af.pak_1" FileName="am.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\am.pak" SelfReg="false"/>
+    <ROW File="ar.pak_1" Component_="af.pak_1" FileName="ar.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ar.pak" SelfReg="false"/>
+    <ROW File="bg.pak_1" Component_="af.pak_1" FileName="bg.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\bg.pak" SelfReg="false"/>
+    <ROW File="bn.pak_1" Component_="af.pak_1" FileName="bn.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\bn.pak" SelfReg="false"/>
+    <ROW File="ca.pak_1" Component_="af.pak_1" FileName="ca.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ca.pak" SelfReg="false"/>
+    <ROW File="cs.pak_1" Component_="af.pak_1" FileName="cs.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\cs.pak" SelfReg="false"/>
+    <ROW File="da.pak_1" Component_="af.pak_1" FileName="da.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\da.pak" SelfReg="false"/>
+    <ROW File="de.pak_1" Component_="af.pak_1" FileName="de.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\de.pak" SelfReg="false"/>
+    <ROW File="el.pak_1" Component_="af.pak_1" FileName="el.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\el.pak" SelfReg="false"/>
+    <ROW File="enGB.pak_1" Component_="af.pak_1" FileName="en-GB.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\en-GB.pak" SelfReg="false"/>
+    <ROW File="enUS.pak_1" Component_="af.pak_1" FileName="en-US.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\en-US.pak" SelfReg="false"/>
+    <ROW File="es419.pak_1" Component_="af.pak_1" FileName="es-419.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\es-419.pak" SelfReg="false"/>
+    <ROW File="es.pak_1" Component_="af.pak_1" FileName="es.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\es.pak" SelfReg="false"/>
+    <ROW File="et.pak_1" Component_="af.pak_1" FileName="et.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\et.pak" SelfReg="false"/>
+    <ROW File="fa.pak_1" Component_="af.pak_1" FileName="fa.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fa.pak" SelfReg="false"/>
+    <ROW File="fi.pak_1" Component_="af.pak_1" FileName="fi.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fi.pak" SelfReg="false"/>
+    <ROW File="fil.pak_1" Component_="af.pak_1" FileName="fil.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fil.pak" SelfReg="false"/>
+    <ROW File="fr.pak_1" Component_="af.pak_1" FileName="fr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fr.pak" SelfReg="false"/>
+    <ROW File="gu.pak_1" Component_="af.pak_1" FileName="gu.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\gu.pak" SelfReg="false"/>
+    <ROW File="he.pak_1" Component_="af.pak_1" FileName="he.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\he.pak" SelfReg="false"/>
+    <ROW File="hi.pak_1" Component_="af.pak_1" FileName="hi.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\hi.pak" SelfReg="false"/>
+    <ROW File="hr.pak_1" Component_="af.pak_1" FileName="hr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\hr.pak" SelfReg="false"/>
+    <ROW File="hu.pak_1" Component_="af.pak_1" FileName="hu.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\hu.pak" SelfReg="false"/>
+    <ROW File="id.pak_1" Component_="af.pak_1" FileName="id.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\id.pak" SelfReg="false"/>
+    <ROW File="it.pak_1" Component_="af.pak_1" FileName="it.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\it.pak" SelfReg="false"/>
+    <ROW File="ja.pak_1" Component_="af.pak_1" FileName="ja.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ja.pak" SelfReg="false"/>
+    <ROW File="kn.pak_1" Component_="af.pak_1" FileName="kn.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\kn.pak" SelfReg="false"/>
+    <ROW File="ko.pak_1" Component_="af.pak_1" FileName="ko.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ko.pak" SelfReg="false"/>
+    <ROW File="lt.pak_1" Component_="af.pak_1" FileName="lt.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\lt.pak" SelfReg="false"/>
+    <ROW File="lv.pak_1" Component_="af.pak_1" FileName="lv.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\lv.pak" SelfReg="false"/>
+    <ROW File="ml.pak_1" Component_="af.pak_1" FileName="ml.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ml.pak" SelfReg="false"/>
+    <ROW File="mr.pak_1" Component_="af.pak_1" FileName="mr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\mr.pak" SelfReg="false"/>
+    <ROW File="ms.pak_1" Component_="af.pak_1" FileName="ms.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ms.pak" SelfReg="false"/>
+    <ROW File="nb.pak_1" Component_="af.pak_1" FileName="nb.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\nb.pak" SelfReg="false"/>
+    <ROW File="nl.pak_1" Component_="af.pak_1" FileName="nl.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\nl.pak" SelfReg="false"/>
+    <ROW File="pl.pak_1" Component_="af.pak_1" FileName="pl.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\pl.pak" SelfReg="false"/>
+    <ROW File="ptBR.pak_1" Component_="af.pak_1" FileName="pt-BR.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\pt-BR.pak" SelfReg="false"/>
+    <ROW File="ptPT.pak_1" Component_="af.pak_1" FileName="pt-PT.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\pt-PT.pak" SelfReg="false"/>
+    <ROW File="ro.pak_1" Component_="af.pak_1" FileName="ro.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ro.pak" SelfReg="false"/>
+    <ROW File="ru.pak_1" Component_="af.pak_1" FileName="ru.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ru.pak" SelfReg="false"/>
+    <ROW File="sk.pak_1" Component_="af.pak_1" FileName="sk.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sk.pak" SelfReg="false"/>
+    <ROW File="sl.pak_1" Component_="af.pak_1" FileName="sl.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sl.pak" SelfReg="false"/>
+    <ROW File="sr.pak_1" Component_="af.pak_1" FileName="sr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sr.pak" SelfReg="false"/>
+    <ROW File="sv.pak_1" Component_="af.pak_1" FileName="sv.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sv.pak" SelfReg="false"/>
+    <ROW File="sw.pak_1" Component_="af.pak_1" FileName="sw.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sw.pak" SelfReg="false"/>
+    <ROW File="ta.pak_1" Component_="af.pak_1" FileName="ta.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ta.pak" SelfReg="false"/>
+    <ROW File="te.pak_1" Component_="af.pak_1" FileName="te.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\te.pak" SelfReg="false"/>
+    <ROW File="th.pak_1" Component_="af.pak_1" FileName="th.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\th.pak" SelfReg="false"/>
+    <ROW File="tr.pak_1" Component_="af.pak_1" FileName="tr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\tr.pak" SelfReg="false"/>
+    <ROW File="uk.pak_1" Component_="af.pak_1" FileName="uk.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\uk.pak" SelfReg="false"/>
+    <ROW File="ur.pak_1" Component_="af.pak_1" FileName="ur.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ur.pak" SelfReg="false"/>
+    <ROW File="vi.pak_1" Component_="af.pak_1" FileName="vi.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\vi.pak" SelfReg="false"/>
+    <ROW File="zhCN.pak_1" Component_="af.pak_1" FileName="zh-CN.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-CN.pak" SelfReg="false"/>
+    <ROW File="zhTW.pak_1" Component_="af.pak_1" FileName="zh-TW.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-TW.pak" SelfReg="false"/>
+    <ROW File="build_meta.json" Component_="build_meta.json" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
+    <ROW File="libGLESv2.dll" Component_="libGLESv2.dll" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
+    <ROW File="chrome_100_percent.pak" Component_="build_meta.json" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
+    <ROW File="resources.pak" Component_="build_meta.json" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcef-bundle\resources.pak" SelfReg="false"/>
+    <ROW File="chrome_200_percent.pak" Component_="build_meta.json" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
+    <ROW File="chrome_elf.dll" Component_="chrome_elf.dll" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
+    <ROW File="d3dcompiler_47.dll" Component_="d3dcompiler_47.dll" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
+    <ROW File="gluegen.LICENSE.txt" Component_="build_meta.json" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
+    <ROW File="icudtl.dat" Component_="build_meta.json" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcef-bundle\icudtl.dat" SelfReg="false"/>
+    <ROW File="install.lock" Component_="build_meta.json" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcef-bundle\install.lock" SelfReg="false"/>
+    <ROW File="jcef.dll" Component_="jcef.dll" FileName="jcef.dll" Attributes="0" SourcePath="..\jcef-bundle\jcef.dll" SelfReg="false"/>
+    <ROW File="jcef_helper.exe" Component_="jcef_helper.exe" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="vulkan1.dll" Component_="vulkan1.dll" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
+    <ROW File="jogl.LICENSE.txt" Component_="build_meta.json" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
+    <ROW File="libcef.dll" Component_="libcef.dll" FileName="libcef.dll" Attributes="0" SourcePath="..\jcef-bundle\libcef.dll" SelfReg="false"/>
+    <ROW File="libEGL.dll" Component_="libEGL.dll" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcef-bundle\libEGL.dll" SelfReg="false"/>
+    <ROW File="LICENSE.txt" Component_="build_meta.json" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\LICENSE.txt" SelfReg="false"/>
+    <ROW File="package.bluej" Component_="build_meta.json" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcef-bundle\package.bluej" SelfReg="false"/>
+    <ROW File="README.txt" Component_="build_meta.json" FileName="README.txt" Attributes="0" SourcePath="..\jcef-bundle\README.txt" SelfReg="false"/>
+    <ROW File="snapshot_blob.bin" Component_="build_meta.json" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
+    <ROW File="v8_context_snapshot.bin" Component_="build_meta.json" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
+    <ROW File="vk_swiftshader.dll" Component_="vk_swiftshader.dll" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader.dll" SelfReg="false"/>
+    <ROW File="vk_swiftshader_icd.json" Component_="build_meta.json" FileName="VK_SWI~1.JSO|vk_swiftshader_icd.json" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader_icd.json" SelfReg="false"/>
+    <ROW File="zhTW.pak" Component_="zhTW.pak" FileName="zh-TW.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-TW.pak" SelfReg="false"/>
+    <ROW File="af.pak" Component_="zhTW.pak" FileName="af.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\af.pak" SelfReg="false"/>
+    <ROW File="am.pak" Component_="zhTW.pak" FileName="am.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\am.pak" SelfReg="false"/>
+    <ROW File="hr.pak" Component_="zhTW.pak" FileName="hr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\hr.pak" SelfReg="false"/>
+    <ROW File="ar.pak" Component_="zhTW.pak" FileName="ar.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ar.pak" SelfReg="false"/>
+    <ROW File="et.pak" Component_="zhTW.pak" FileName="et.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\et.pak" SelfReg="false"/>
+    <ROW File="bn.pak" Component_="zhTW.pak" FileName="bn.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\bn.pak" SelfReg="false"/>
+    <ROW File="ptPT.pak" Component_="zhTW.pak" FileName="pt-PT.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\pt-PT.pak" SelfReg="false"/>
+    <ROW File="bg.pak" Component_="zhTW.pak" FileName="bg.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\bg.pak" SelfReg="false"/>
+    <ROW File="it.pak" Component_="zhTW.pak" FileName="it.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\it.pak" SelfReg="false"/>
+    <ROW File="ca.pak" Component_="zhTW.pak" FileName="ca.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ca.pak" SelfReg="false"/>
+    <ROW File="da.pak" Component_="zhTW.pak" FileName="da.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\da.pak" SelfReg="false"/>
+    <ROW File="enGB.pak" Component_="zhTW.pak" FileName="en-GB.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\en-GB.pak" SelfReg="false"/>
+    <ROW File="cs.pak" Component_="zhTW.pak" FileName="cs.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\cs.pak" SelfReg="false"/>
+    <ROW File="de.pak" Component_="zhTW.pak" FileName="de.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\de.pak" SelfReg="false"/>
+    <ROW File="fa.pak" Component_="zhTW.pak" FileName="fa.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fa.pak" SelfReg="false"/>
+    <ROW File="el.pak" Component_="zhTW.pak" FileName="el.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\el.pak" SelfReg="false"/>
+    <ROW File="enUS.pak" Component_="zhTW.pak" FileName="en-US.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\en-US.pak" SelfReg="false"/>
+    <ROW File="es419.pak" Component_="zhTW.pak" FileName="es-419.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\es-419.pak" SelfReg="false"/>
+    <ROW File="es.pak" Component_="zhTW.pak" FileName="es.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\es.pak" SelfReg="false"/>
+    <ROW File="fi.pak" Component_="zhTW.pak" FileName="fi.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fi.pak" SelfReg="false"/>
+    <ROW File="fil.pak" Component_="zhTW.pak" FileName="fil.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fil.pak" SelfReg="false"/>
+    <ROW File="fr.pak" Component_="zhTW.pak" FileName="fr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\fr.pak" SelfReg="false"/>
+    <ROW File="gu.pak" Component_="zhTW.pak" FileName="gu.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\gu.pak" SelfReg="false"/>
+    <ROW File="he.pak" Component_="zhTW.pak" FileName="he.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\he.pak" SelfReg="false"/>
+    <ROW File="hi.pak" Component_="zhTW.pak" FileName="hi.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\hi.pak" SelfReg="false"/>
+    <ROW File="hu.pak" Component_="zhTW.pak" FileName="hu.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\hu.pak" SelfReg="false"/>
+    <ROW File="id.pak" Component_="zhTW.pak" FileName="id.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\id.pak" SelfReg="false"/>
+    <ROW File="ja.pak" Component_="zhTW.pak" FileName="ja.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ja.pak" SelfReg="false"/>
+    <ROW File="kn.pak" Component_="zhTW.pak" FileName="kn.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\kn.pak" SelfReg="false"/>
+    <ROW File="ko.pak" Component_="zhTW.pak" FileName="ko.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ko.pak" SelfReg="false"/>
+    <ROW File="lt.pak" Component_="zhTW.pak" FileName="lt.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\lt.pak" SelfReg="false"/>
+    <ROW File="pl.pak" Component_="zhTW.pak" FileName="pl.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\pl.pak" SelfReg="false"/>
+    <ROW File="lv.pak" Component_="zhTW.pak" FileName="lv.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\lv.pak" SelfReg="false"/>
+    <ROW File="ml.pak" Component_="zhTW.pak" FileName="ml.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ml.pak" SelfReg="false"/>
+    <ROW File="mr.pak" Component_="zhTW.pak" FileName="mr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\mr.pak" SelfReg="false"/>
+    <ROW File="ms.pak" Component_="zhTW.pak" FileName="ms.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ms.pak" SelfReg="false"/>
+    <ROW File="nb.pak" Component_="zhTW.pak" FileName="nb.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\nb.pak" SelfReg="false"/>
+    <ROW File="nl.pak" Component_="zhTW.pak" FileName="nl.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\nl.pak" SelfReg="false"/>
+    <ROW File="ptBR.pak" Component_="zhTW.pak" FileName="pt-BR.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\pt-BR.pak" SelfReg="false"/>
+    <ROW File="sl.pak" Component_="zhTW.pak" FileName="sl.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sl.pak" SelfReg="false"/>
+    <ROW File="ro.pak" Component_="zhTW.pak" FileName="ro.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ro.pak" SelfReg="false"/>
+    <ROW File="ru.pak" Component_="zhTW.pak" FileName="ru.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ru.pak" SelfReg="false"/>
+    <ROW File="sk.pak" Component_="zhTW.pak" FileName="sk.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sk.pak" SelfReg="false"/>
+    <ROW File="sr.pak" Component_="zhTW.pak" FileName="sr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sr.pak" SelfReg="false"/>
+    <ROW File="sv.pak" Component_="zhTW.pak" FileName="sv.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sv.pak" SelfReg="false"/>
+    <ROW File="sw.pak" Component_="zhTW.pak" FileName="sw.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\sw.pak" SelfReg="false"/>
+    <ROW File="ta.pak" Component_="zhTW.pak" FileName="ta.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ta.pak" SelfReg="false"/>
+    <ROW File="te.pak" Component_="zhTW.pak" FileName="te.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\te.pak" SelfReg="false"/>
+    <ROW File="th.pak" Component_="zhTW.pak" FileName="th.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\th.pak" SelfReg="false"/>
+    <ROW File="vi.pak" Component_="zhTW.pak" FileName="vi.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\vi.pak" SelfReg="false"/>
+    <ROW File="tr.pak" Component_="zhTW.pak" FileName="tr.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\tr.pak" SelfReg="false"/>
+    <ROW File="uk.pak" Component_="zhTW.pak" FileName="uk.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\uk.pak" SelfReg="false"/>
+    <ROW File="ur.pak" Component_="zhTW.pak" FileName="ur.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ur.pak" SelfReg="false"/>
+    <ROW File="zhCN.pak" Component_="zhTW.pak" FileName="zh-CN.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-CN.pak" SelfReg="false"/>
+    <ROW File="GameboardVorlage.jar" Component_="GameboardVorlage.jar" FileName="GAMEBO~1.JAR|GameboardVorlage.jar" Attributes="0" SourcePath="..\resources\GameboardVorlage.jar" SelfReg="false"/>
+    <ROW File="build_meta.json_2" Component_="build_meta.json_2" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
+    <ROW File="chrome_100_percent.pak_2" Component_="build_meta.json_2" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
+    <ROW File="chrome_200_percent.pak_2" Component_="build_meta.json_2" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
+    <ROW File="chrome_elf.dll_2" Component_="chrome_elf.dll_2" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
+    <ROW File="d3dcompiler_47.dll_2" Component_="d3dcompiler_47.dll_2" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
+    <ROW File="gluegen.LICENSE.txt_2" Component_="build_meta.json_2" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
+    <ROW File="icudtl.dat_2" Component_="build_meta.json_2" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcef-bundle\icudtl.dat" SelfReg="false"/>
+    <ROW File="install.lock_2" Component_="build_meta.json_2" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcef-bundle\install.lock" SelfReg="false"/>
+    <ROW File="jcef.dll_2" Component_="jcef.dll_2" FileName="jcef.dll" Attributes="0" SourcePath="..\jcef-bundle\jcef.dll" SelfReg="false"/>
+    <ROW File="jcef_helper.exe_2" Component_="jcef_helper.exe_2" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="jogl.LICENSE.txt_2" Component_="build_meta.json_2" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
+    <ROW File="libcef.dll_2" Component_="libcef.dll_2" FileName="libcef.dll" Attributes="0" SourcePath="..\jcef-bundle\libcef.dll" SelfReg="false"/>
+    <ROW File="libEGL.dll_2" Component_="libEGL.dll_2" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcef-bundle\libEGL.dll" SelfReg="false"/>
+    <ROW File="libGLESv2.dll_2" Component_="libGLESv2.dll_2" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
+    <ROW File="LICENSE.txt_2" Component_="build_meta.json_2" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\LICENSE.txt" SelfReg="false"/>
+    <ROW File="package.bluej_2" Component_="build_meta.json_2" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcef-bundle\package.bluej" SelfReg="false"/>
+    <ROW File="README.txt_2" Component_="build_meta.json_2" FileName="README.txt" Attributes="0" SourcePath="..\jcef-bundle\README.txt" SelfReg="false"/>
+    <ROW File="resources.pak_2" Component_="build_meta.json_2" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcef-bundle\resources.pak" SelfReg="false"/>
+    <ROW File="snapshot_blob.bin_2" Component_="build_meta.json_2" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
+    <ROW File="v8_context_snapshot.bin_2" Component_="build_meta.json_2" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
+    <ROW File="vk_swiftshader.dll_2" Component_="vk_swiftshader.dll_2" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader.dll" SelfReg="false"/>
+    <ROW File="vk_swiftshader_icd.json_2" Component_="build_meta.json_2" FileName="VK_SWI~1.JSO|vk_swiftshader_icd.json" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader_icd.json" SelfReg="false"/>
+    <ROW File="vulkan1.dll_2" Component_="vulkan1.dll_2" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -296,7 +325,6 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
     <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
-    <ROW Directory_="customgeneratorcodelab_Dir" Component_="customgeneratorcodelab" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
@@ -315,20 +343,6 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
     <ROW Feature_="MainFeature" Component_="APPDIR"/>
     <ROW Feature_="MainFeature" Component_="ProductInformation"/>
-    <ROW Feature_="MainFeature" Component_="customgeneratorcodelab"/>
-    <ROW Feature_="MainFeature" Component_="bbe.jar"/>
-    <ROW Feature_="MainFeature" Component_="bundle.js"/>
-    <ROW Feature_="MainFeature" Component_="build_meta.json"/>
-    <ROW Feature_="MainFeature" Component_="chrome_elf.dll"/>
-    <ROW Feature_="MainFeature" Component_="d3dcompiler_47.dll"/>
-    <ROW Feature_="MainFeature" Component_="jcef.dll"/>
-    <ROW Feature_="MainFeature" Component_="jcef_helper.exe"/>
-    <ROW Feature_="MainFeature" Component_="libcef.dll"/>
-    <ROW Feature_="MainFeature" Component_="libEGL.dll"/>
-    <ROW Feature_="MainFeature" Component_="libGLESv2.dll"/>
-    <ROW Feature_="MainFeature" Component_="af.pak"/>
-    <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll"/>
-    <ROW Feature_="MainFeature" Component_="vulkan1.dll"/>
     <ROW Feature_="MainFeature" Component_="build_meta.json_1"/>
     <ROW Feature_="MainFeature" Component_="chrome_elf.dll_1"/>
     <ROW Feature_="MainFeature" Component_="d3dcompiler_47.dll_1"/>
@@ -337,10 +351,33 @@
     <ROW Feature_="MainFeature" Component_="libcef.dll_1"/>
     <ROW Feature_="MainFeature" Component_="libEGL.dll_1"/>
     <ROW Feature_="MainFeature" Component_="libGLESv2.dll_1"/>
-    <ROW Feature_="MainFeature" Component_="af.pak_1"/>
     <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll_1"/>
     <ROW Feature_="MainFeature" Component_="vulkan1.dll_1"/>
+    <ROW Feature_="MainFeature" Component_="bundle.js_1"/>
+    <ROW Feature_="MainFeature" Component_="BluejBlocklyExtension.jar"/>
+    <ROW Feature_="MainFeature" Component_="af.pak_1"/>
+    <ROW Feature_="MainFeature" Component_="build_meta.json"/>
+    <ROW Feature_="MainFeature" Component_="libGLESv2.dll"/>
+    <ROW Feature_="MainFeature" Component_="chrome_elf.dll"/>
+    <ROW Feature_="MainFeature" Component_="d3dcompiler_47.dll"/>
+    <ROW Feature_="MainFeature" Component_="jcef.dll"/>
+    <ROW Feature_="MainFeature" Component_="jcef_helper.exe"/>
+    <ROW Feature_="MainFeature" Component_="vulkan1.dll"/>
+    <ROW Feature_="MainFeature" Component_="libcef.dll"/>
+    <ROW Feature_="MainFeature" Component_="libEGL.dll"/>
+    <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll"/>
+    <ROW Feature_="MainFeature" Component_="zhTW.pak"/>
     <ROW Feature_="MainFeature" Component_="GameboardVorlage.jar"/>
+    <ROW Feature_="MainFeature" Component_="build_meta.json_2"/>
+    <ROW Feature_="MainFeature" Component_="chrome_elf.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="d3dcompiler_47.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="jcef.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="jcef_helper.exe_2"/>
+    <ROW Feature_="MainFeature" Component_="libcef.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="libEGL.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="libGLESv2.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="vulkan1.dll_2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="bbe.exe" SourcePath="..\bbe.ico" Index="0"/>
