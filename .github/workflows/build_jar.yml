@@ -17,6 +17,7 @@ jobs:
           ls -l
           du -sh ./*  
           git lfs checkout
+          git lfs pull
           ls -l
           du -sh ./*  
       - name: Set up JDK 17
