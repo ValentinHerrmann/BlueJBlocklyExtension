@@ -71,7 +71,7 @@ public class Logging {
         String dateTime = LocalDateTime.now().toString();
         String thread = Thread.currentThread().getName();
         String log = dateTime + "\t" + thread + "\t" + text + System.lineSeparator();
-        System.out.println(log);
+        //System.out.println(log);
 
         if(Config.LogActive())
         {

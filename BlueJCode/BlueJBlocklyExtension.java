@@ -4,7 +4,6 @@ import BlueJCode.Blockly.BlocklyHandler;
 import bluej.extensions2.*;
 import bluej.extensions2.event.PackageEvent;
 import bluej.extensions2.event.PackageListener;
-import org.apache.commons.compress.compressors.lz77support.LZ77Compressor;
 
 import java.net.URL;
 
@@ -84,7 +83,7 @@ public class BlueJBlocklyExtension extends Extension implements PackageListener
     {
         try
         {
-            return new URL("");
+            return new URL("https://valentin-herrmann.com");
         }
         catch (Exception var2)
         {

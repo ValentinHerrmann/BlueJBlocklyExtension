@@ -7,3 +7,13 @@ Blockly/custom-generator-codelab/node_modules/.bin/
 logs/
 
 *.bluej
+
+target/
+
+extensions2/BBE-cache/
+
+extensions2/BBE-SetupFiles/
+
+resources/GameboardVorlage.jar
+
+extensions2/BBE.back(21.7.1).aip

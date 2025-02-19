@@ -4,8 +4,10 @@
 
 package BlueJCode.Blockly;
 
+import BlueJCode.Config;
 import BlueJCode.Logging;
 import me.friwi.jcefmaven.*;
+import me.friwi.jcefmaven.impl.progress.ConsoleProgressHandler;
 import org.cef.CefApp;
 import org.cef.CefApp.CefAppState;
 import org.cef.CefClient;
@@ -13,9 +15,12 @@ import org.cef.browser.CefBrowser;
 import org.cef.browser.CefMessageRouter;
 import org.cef.handler.CefFocusHandlerAdapter;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import javax.swing.JFrame;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.KeyboardFocusManager;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 
@@ -59,6 +64,13 @@ class MainFrame extends JFrame
             this.setVisible(true);
             // (0) Initialize CEF using the maven loader
             CefAppBuilder builder = new CefAppBuilder();
+            builder.setInstallDir(new File(Config.JcefBundlePath()));
+
+
+            builder.setProgressHandler(new ConsoleProgressHandler()); //Default
+
+            builder.addJcefArgs("--disable-gpu"); //Just an example
+
             // windowless_rendering_enabled must be set to false if not wanted.
             builder.getCefSettings().windowless_rendering_enabled = useOSR;
             // USE builder.setAppHandler INSTEAD OF CefApp.addAppHandler!
@@ -88,9 +100,17 @@ class MainFrame extends JFrame
             //     build the CefApp on first run and fetch the instance on all consecutive
             //     runs. This method is thread-safe and will always return a valid app
             //     instance.
-
-            Logging.log("Guessed jcef installation dir: "+new File("jcef-bundle").getAbsolutePath());
-            cefApp_ = builder.build();
+            try
+            {
+                Logging.log("Guessed jcef installation dir: "+new File("jcef-bundle").getAbsolutePath());
+                Logging.log("Try building CefApp");
+                cefApp_ = builder.build();
+            }
+            catch (Exception e)
+            {
+                Logging.log("Guessed jcef installation dir is read-only");
+                Logging.log(e.getStackTrace());
+            }
 
             // (2) JCEF can handle one to many browser instances simultaneous. These
             //     browser instances are logically grouped together by an instance of
