@@ -8,20 +8,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          lfs: 'true'
+          lfs: 'false'
           submodules: 'true'
           token: ${{ secrets.PAT_TOKEN }}
-      - name: Pull LFS
-        run: |
-        
-          cd jcef-bundle
-          ls -l
-          du -sh ./*  
-          GIT_TRACE=1 
-          git lfs fetch
-          git lfs checkout
-          ls -l
-          du -sh ./*  
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
