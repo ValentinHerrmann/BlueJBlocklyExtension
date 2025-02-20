@@ -5,6 +5,10 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
+import org.apache.commons.lang3.RegExUtils;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class MenuBuilder extends MenuGenerator
 {
@@ -36,6 +40,24 @@ class MenuBuilder extends MenuGenerator
         return actionEvent ->
         {
             Logging.log(">>> MenuBuilder.openBlocklyEvent");
+
+            String clzName = curClass.getName();
+            for (String noBlocklyClass : Config.NoBlocklyClasses())
+            {
+                Pattern pattern = Pattern.compile(noBlocklyClass);
+                Matcher matcher = pattern.matcher(clzName);
+                if(matcher.matches())
+                {
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Info");
+                    alert.setHeaderText("Die Klasse "+clzName+" darf nicht mit Blockly geöffnet werden.");
+                    alert.showAndWait();
+                    Logging.log("<<< MenuBuilder.openBlocklyEvent");
+                    return;
+                }
+            }
+
+
             CodeHandler.setActiveInstance(curClass);
             closeAllWindowsExceptMain();
             //Blocklyfenster
