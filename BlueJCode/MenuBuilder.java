@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
 import org.apache.commons.lang3.RegExUtils;
+import org.apache.commons.logging.Log;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -42,6 +43,8 @@ class MenuBuilder extends MenuGenerator
             Logging.log(">>> MenuBuilder.openBlocklyEvent");
 
             String clzName = curClass.getName();
+            Logging.log("Class: "+clzName);
+            Logging.log("No Blockly Classes: "+Config.NoBlocklyClasses().toString());
             for (String noBlocklyClass : Config.NoBlocklyClasses())
             {
                 Pattern pattern = Pattern.compile(noBlocklyClass);

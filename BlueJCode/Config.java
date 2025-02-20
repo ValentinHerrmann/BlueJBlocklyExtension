@@ -1,6 +1,7 @@
 package BlueJCode;
 
 
+import org.apache.commons.logging.Log;
 import org.ini4j.Ini;
 
 import java.io.File;
@@ -35,27 +36,22 @@ public class Config
 
         Logging.log("LibPath: " + libPath);
         Logging.log("ProjectPath: " + projectPath);
+
+        if(readIni(projectPath + "/Blockly/BBE.ini") || readIni(libPath + "/Blockly/BBE.ini"))
+        {
+            try { logActive = iniMap.get("Logging").get("active").equalsIgnoreCase("true"); }
+            catch (Exception e) { Logging.log(e.toString()); }
+
+            try { blocklyHtmlPath = iniMap.get("Paths").get("blocklyHtmlPath"); }
+            catch (Exception e) { Logging.log(e.toString()); }
+
+            try { jcefBundlePath = iniMap.get("Paths").get("jcefBundlePath"); }
+            catch (Exception e) { Logging.log(e.toString()); }
+        }
+        try { noBlocklyClasses = readNoBlocklyClasses(); }
+        catch (Exception e) { Logging.log(e.toString()); }
+
         htmlPath = projectPath + blocklyHtmlPath;
-
-        readIni("Blockly/BBE.ini");
-
-        try { logActive = iniMap.get("Logging").get("active").equalsIgnoreCase("true"); }
-        catch (Exception e) { Logging.log(e.toString()); }
-
-        try { blocklyHtmlPath = iniMap.get("Paths").get("blocklyHtmlPath"); }
-        catch (Exception e) { Logging.log(e.toString()); }
-
-        try { jcefBundlePath = iniMap.get("Paths").get("jcefBundlePath"); }
-        catch (Exception e) { Logging.log(e.toString()); }
-
-
-
-        //logActive = Files.exists(Paths.get(projectPath + "/Blockly/logactive.txt"));
-
-        noBlocklyClasses = readNoBlocklyClasses();
-
-
-
         if(Files.exists(Paths.get(htmlPath)))
         {
             Logging.log("Detected Blockly in Project Dire. For loading Blockly vom BluJ's Lib Folder delete the Blockly folder in the Project Dir before startup.");
@@ -89,15 +85,15 @@ public class Config
         }
     }
 
-    private static void readIni(String iniPath)
+    private static boolean readIni(String iniPath)
     {
         try
         {
-            File fileToParse = new File(Paths.get(projectPath, iniPath).toAbsolutePath().toString());
+            File fileToParse = new File(Paths.get(iniPath).toAbsolutePath().toString());
             if(!fileToParse.exists())
             {
                 Logging.log(fileToParse.getAbsolutePath() + " is no valid ini file.");
-                return;
+                return false;
             }
             Ini ini = new Ini(fileToParse);
             iniMap = ini.entrySet().stream().collect(toMap(Map.Entry::getKey, Map.Entry::getValue));
@@ -107,10 +103,12 @@ public class Config
                     Logging.log("Key: " + k + " Value: " + v);
                 });
             });
+            return true;
         }
         catch(Exception e)
         {
             Logging.log(e.toString());
+            return false;
         }
     }
 
