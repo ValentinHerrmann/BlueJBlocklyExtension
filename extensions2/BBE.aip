@@ -270,6 +270,7 @@
     <ROW File="vk_swiftshader.dll_2" Component_="vk_swiftshader.dll_2" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader.dll" SelfReg="false"/>
     <ROW File="vk_swiftshader_icd.json_2" Component_="build_meta.json_2" FileName="VK_SWI~1.JSO|vk_swiftshader_icd.json" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader_icd.json" SelfReg="false"/>
     <ROW File="vulkan1.dll_2" Component_="vulkan1.dll_2" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
+    <ROW File="BBE.ini" Component_="bundle.js_1" FileName="BBE.ini" Attributes="0" SourcePath="..\resources\BBE.ini" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
