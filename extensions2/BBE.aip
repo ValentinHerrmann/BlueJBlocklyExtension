@@ -3,13 +3,13 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="ALLUSERS" Value="1"/>
-    <ROW Property="ARPCOMMENTS" Value="Version [|ProductVersion] (BlueJ.Blockly.Gameboard)" ValueLocId="*"/>
+    <ROW Property="ARPCOMMENTS" Value="Version [|ProductVersion] (BBE.Blockly.Gameboard)" ValueLocId="*"/>
     <ROW Property="ARPPRODUCTICON" Value="bbe.exe" Type="8"/>
     <ROW Property="Manufacturer" Value="Valentin Herrmann, Simon Klocke, Lena Schaak"/>
-    <ROW Property="ProductCode" Value="1031:{F1067995-1313-48A0-A946-4082D45F05D3} " Type="16"/>
+    <ROW Property="ProductCode" Value="1031:{78100B90-CBEE-4268-B26D-4F108FF94E74} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="BlueJ Blockly Extension"/>
-    <ROW Property="ProductVersion" Value="15.14.11" Options="4"/>
+    <ROW Property="ProductVersion" Value="16.15.12" Options="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{240599CC-2016-4C7C-AB66-99A42AF243F4}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -26,6 +26,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
     <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
     <ROW Directory="Blocklz_Dir" Directory_Parent="lib_Dir" DefaultDir="Blockly"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
     <ROW Directory="PublicFolder" Directory_Parent="TARGETDIR" DefaultDir="PUBLIC~1|PublicFolder" IsPseudoRoot="1"/>
     <ROW Directory="System64Folder" Directory_Parent="TARGETDIR" DefaultDir="SYSTEM~2|System64Folder" IsPseudoRoot="1"/>
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
@@ -58,6 +59,7 @@
     <ROW Component="d3dcompiler_47.dll" ComponentId="{211AA900-FCC3-4176-A66A-BB0FA847C7A0}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll"/>
     <ROW Component="d3dcompiler_47.dll_1" ComponentId="{17FCB027-1353-4855-B568-D93A9D08D615}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll_1"/>
     <ROW Component="d3dcompiler_47.dll_2" ComponentId="{FD3669B6-2827-479A-A04D-6A5B0B2A77C5}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="d3dcompiler_47.dll_2"/>
+    <ROW Component="index.html" ComponentId="{1107B885-48C5-4C47-A5A2-F4941F607492}" Directory_="Blocklz_Dir" Attributes="0" KeyPath="index.html_1"/>
     <ROW Component="jcef.dll" ComponentId="{93FC7948-92D6-4672-B1B6-3511DF2EA0C9}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="jcef.dll"/>
     <ROW Component="jcef.dll_1" ComponentId="{BD5290AF-5D87-4EA1-8285-186DD0799D6B}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="jcef.dll_1"/>
     <ROW Component="jcef.dll_2" ComponentId="{D8EAEECD-8B5F-4C39-A6C8-FB796B669604}" Directory_="jcefbundle_3_Dir" Attributes="256" KeyPath="jcef.dll_2"/>
@@ -88,7 +90,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="bundle.js_1" Component_="bundle.js_1" FileName="bundle.js" Attributes="0" SourcePath="..\resources\Blockly\bundle.js" SelfReg="false"/>
     <ROW File="bundle.js.LICENSE.txt_1" Component_="bundle.js_1" FileName="BUNDLE~1.TXT|bundle.js.LICENSE.txt" Attributes="0" SourcePath="..\resources\Blockly\bundle.js.LICENSE.txt" SelfReg="false"/>
-    <ROW File="index.html_1" Component_="bundle.js_1" FileName="INDEX~1.HTM|index.html" Attributes="0" SourcePath="..\resources\Blockly\index.html" SelfReg="false"/>
+    <ROW File="index.html_1" Component_="index.html" FileName="INDEX~1.HTM|index.html" Attributes="0" SourcePath="..\resources\Blockly\index.html" SelfReg="false"/>
     <ROW File="BluejBlocklyExtension.jar" Component_="BluejBlocklyExtension.jar" FileName="BLUEJB~1.JAR|BluejBlocklyExtension.jar" Attributes="0" SourcePath="..\target\BluejBlocklyExtension.jar" SelfReg="false"/>
     <ROW File="build_meta.json_1" Component_="build_meta.json_1" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
     <ROW File="chrome_100_percent.pak_1" Component_="build_meta.json_1" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
@@ -334,6 +336,7 @@
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Type="65" Source="aicustact.dll" Target="PreserveInstallType"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
@@ -379,6 +382,7 @@
     <ROW Feature_="MainFeature" Component_="libGLESv2.dll_2"/>
     <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll_2"/>
     <ROW Feature_="MainFeature" Component_="vulkan1.dll_2"/>
+    <ROW Feature_="MainFeature" Component_="index.html"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="bbe.exe" SourcePath="..\bbe.ico" Index="0"/>
@@ -389,12 +393,14 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_PRESERVE_INSTALL_TYPE" Sequence="199"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
     <ROW Action="AI_DpiContentScale" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="((VersionNT &lt;&gt; 501) AND (VersionNT &lt;&gt; 502))" Description="[ProductName] kann nicht auf [WindowsTypeNT5XDisplay] installiert werden." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
@@ -409,6 +415,9 @@
     <ROW Registry="ProductName" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="\"/>
     <ROW Registry="Software" Root="-1" Key="Software" Name="\"/>
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="Verknpfungzu" Directory_="ProgramMenuFolder" Name="BLOCKL~1|Blockly2Java" Component_="index.html" Target="[#index.html_1]" Hotkey="0" Icon_="bbe.exe" IconIndex="0" ShowCmd="3" WkDir="Blocklz_Dir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>
