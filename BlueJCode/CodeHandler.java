@@ -60,7 +60,7 @@ public class CodeHandler
             javaFilePath = clz.getJavaFile().getAbsolutePath();
             xmlFilePath = javaFilePath.indexOf(".java") > 0 ? javaFilePath.replace(".java", ".xml") : javaFilePath + ".xml";
             editor = clz.getJavaEditor();
-            editor.showMessage("Achtung: Aenderungen im Java-Code (hier) werden beim Starten von Blocklz geloescht!");
+            editor.showMessage("Achtung: Aenderungen im Java-Code (hier) werden beim Starten von Blockly geloescht!");
             className = clz.getName();
         }
         catch (Exception e)
