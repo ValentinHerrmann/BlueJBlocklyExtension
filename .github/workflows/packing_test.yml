@@ -2,23 +2,22 @@ name: Download and Zip Artifacts
 
 on:
   workflow_dispatch:
-
 jobs:
   download_and_zip:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Set up Node.js
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: '14'
 
     - name: Download latest release artifact from jcef-bundle
       id: download_jcef
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         owner: ValentinHerrmann
         repo: jcef-bundle
@@ -27,7 +26,7 @@ jobs:
 
     - name: Download latest release artifact from Blockly2Java
       id: download_blockly
-      uses: actions/download-artifact@v2
+      uses: actions/download-artifact@v3
       with:
         owner: ValentinHerrmann
         repo: Blockly2Java
@@ -40,7 +39,7 @@ jobs:
         ls -lh combined_artifacts.zip
 
     - name: Upload ZIP file
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: combined-artifacts
         path: combined_artifacts.zip
