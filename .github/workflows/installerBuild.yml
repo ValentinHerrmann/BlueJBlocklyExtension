@@ -5,6 +5,13 @@ jobs:
     runs-on: windows-latest
     name: Build Aip Demo
     steps:
+      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: 'false'
+          submodules: 'false'
+          token: ${{ secrets.PAT_TOKEN }}
 
       - name: Download jcef-bundle
         uses: dsaltares/fetch-gh-release-asset@master
@@ -44,13 +51,6 @@ jobs:
           version: 'latest'
           file: GameboardVorlage.jar
           target: GameboardVorlage.jar
-          token: ${{ secrets.PAT_TOKEN }}
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          lfs: 'false'
-          submodules: 'false'
           token: ${{ secrets.PAT_TOKEN }}
       
       - name: List files
