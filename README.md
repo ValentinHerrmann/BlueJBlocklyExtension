@@ -4,7 +4,14 @@ Developed and tested for Windows only!
 1. Ensure you have BlueJ installed on your machine and it's not running.
 2. Download the Release and launch the MSI-Installer inside the ZIP. The default path is correct if you have BlueJ installed at it's default path. This will install BBE with all dependencies.
 3. Launch BlueJ and you are ready to go. At Help -> Installed Extensions you should see BBE listed.
-4. Right-Click a class and see the Option Blockly at the bottom of the context menu. First launch of Blockly might take 1-3 minutes. If after that time you only see a blank window restart BlueJ. If the problem still exists please submit an issue [here](https://github.com/users/ValentinHerrmann/projects/1).
+4. Right-Click a class and see the Option Blockly at the bottom of the context menu.
+5. Troubleshooting (in that order, stop as soon as Blockly works):
+    - First launch of Blockly might take 1-3 minutes. If after that time you only see a blank window close and reopen Blockly.
+    - Close and reopen BlueJ.
+    - Check the configured jcef-bundle path and if the folder exists and has files in it. If not, first try to copy the jcef-bundle folder from one of the other folders to the configured one.
+    - Change the configured jcef-bundle path to one where the folder exists.
+    - Reinstall BBE
+    - If the problem still exists please submit an issue [here](https://github.com/users/ValentinHerrmann/projects/1).
 
 ## Configuration
 In your BlueJ folder at `{{BlueJFolder}}/lib/Blockly/BBE.ini` the global configuration file is located. It can be overwritten (all entries!) by a configuration file at `{{ProjectFolder}}/Blockly/BBE.ini`.
