@@ -46,7 +46,7 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
     <ROW Component="APPDIR" ComponentId="{CFC5DC2C-60F3-4E16-BB9D-B23EAB805BB2}" Directory_="APPDIR" Attributes="0"/>
     <ROW Component="BluejBlocklyExtension.jar" ComponentId="{C4621E0B-6796-45C5-920D-D1405A85A45E}" Directory_="extensions2_Dir" Attributes="0" KeyPath="BluejBlocklyExtension.jar" Type="0"/>
-    <ROW Component="GameboardVorlage.jar" ComponentId="{768847D8-6C12-4E97-B73B-3DB15BABB5DB}" Directory_="userlib_Dir" Attributes="0" KeyPath="GameboardVorlage.jar" Type="0"/>
+    <ROW Component="GameboardVorlage.jar" ComponentId="{7BD6C1AA-0D6E-4E62-A9B1-2958501C768F}" Directory_="userlib_Dir" Attributes="0" KeyPath="GameboardVorlage.jar" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{01E1DAA4-77B1-45C4-A717-49BFFC0FFDAA}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="af.pak_1" ComponentId="{1752C292-48A3-4E89-A799-0F98F25C4DF2}" Directory_="locales_2_Dir" Attributes="0" KeyPath="af.pak_1" Type="0"/>
     <ROW Component="build_meta.json" ComponentId="{3081C6B0-3CF5-49CE-B5D7-F9DDB9715D57}" Directory_="jcefbundle_Dir" Attributes="0" KeyPath="build_meta.json" Type="0"/>
@@ -248,7 +248,6 @@
     <ROW File="uk.pak" Component_="zhTW.pak" FileName="uk.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\uk.pak" SelfReg="false"/>
     <ROW File="ur.pak" Component_="zhTW.pak" FileName="ur.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ur.pak" SelfReg="false"/>
     <ROW File="zhCN.pak" Component_="zhTW.pak" FileName="zh-CN.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-CN.pak" SelfReg="false"/>
-    <ROW File="GameboardVorlage.jar" Component_="GameboardVorlage.jar" FileName="GAMEBO~1.JAR|GameboardVorlage.jar" Attributes="0" SourcePath="..\resources\GameboardVorlage.jar" SelfReg="false"/>
     <ROW File="build_meta.json_2" Component_="build_meta.json_2" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
     <ROW File="chrome_100_percent.pak_2" Component_="build_meta.json_2" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
     <ROW File="chrome_200_percent.pak_2" Component_="build_meta.json_2" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
@@ -273,6 +272,7 @@
     <ROW File="vk_swiftshader_icd.json_2" Component_="build_meta.json_2" FileName="VK_SWI~1.JSO|vk_swiftshader_icd.json" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader_icd.json" SelfReg="false"/>
     <ROW File="vulkan1.dll_2" Component_="vulkan1.dll_2" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
     <ROW File="BBE.ini" Component_="bundle.js_1" FileName="BBE.ini" Attributes="0" SourcePath="..\resources\BBE.ini" SelfReg="false"/>
+    <ROW File="GameboardVorlage.jar" Component_="GameboardVorlage.jar" FileName="GAMEBO~1.JAR|GameboardVorlage.jar" Attributes="0" SourcePath="..\GameboardVorlage.jar" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -371,7 +371,6 @@
     <ROW Feature_="MainFeature" Component_="libEGL.dll"/>
     <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll"/>
     <ROW Feature_="MainFeature" Component_="zhTW.pak"/>
-    <ROW Feature_="MainFeature" Component_="GameboardVorlage.jar"/>
     <ROW Feature_="MainFeature" Component_="build_meta.json_2"/>
     <ROW Feature_="MainFeature" Component_="chrome_elf.dll_2"/>
     <ROW Feature_="MainFeature" Component_="d3dcompiler_47.dll_2"/>
@@ -383,6 +382,7 @@
     <ROW Feature_="MainFeature" Component_="vk_swiftshader.dll_2"/>
     <ROW Feature_="MainFeature" Component_="vulkan1.dll_2"/>
     <ROW Feature_="MainFeature" Component_="index.html"/>
+    <ROW Feature_="MainFeature" Component_="GameboardVorlage.jar"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="bbe.exe" SourcePath="..\bbe.ico" Index="0"/>
