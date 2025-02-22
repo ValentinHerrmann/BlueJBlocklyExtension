@@ -17,5 +17,8 @@ jobs:
           target: windows-amd64.tar.gz
           token: ${{ secrets.PAT_TOKEN }}
       - name: List files
-        run: ls -l
+        run: |
+          ls -l
+          tar -xvzf community_images.tar.gz
+          ls -l
       
