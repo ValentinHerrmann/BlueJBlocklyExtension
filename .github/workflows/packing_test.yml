@@ -14,11 +14,11 @@ jobs:
           repo: 'jcefmaven/jcefbuild'
           version: 'tags/1.0.53'
           file: windows-amd64.tar.gz
-          target: windows-amd64.tar.gz
+          target: jcef-bundle.tar.gz
           token: ${{ secrets.PAT_TOKEN }}
       - name: List files
         run: |
           ls -l
-          tar -xvzf community_images.tar.gz
+          tar -xvzf jcef-bundle.tar.gz
           ls -l
       
