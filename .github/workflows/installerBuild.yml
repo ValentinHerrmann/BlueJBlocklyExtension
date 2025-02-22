@@ -5,7 +5,7 @@ jobs:
     runs-on: windows-latest
     name: Build Aip Demo
     steps:
-      
+
       - name: Download jcef-bundle
         uses: dsaltares/fetch-gh-release-asset@master
         with:
@@ -18,9 +18,8 @@ jobs:
       - name: Unpack jcef-bundle
         run: |
           tar -xvzf jcef-bundle.tar.gz
-          cp -r ./bin/lib/win64 jcef-bundle
-          rm -r ./bin
-          ls -l
+          robocopy .\bin\lib\win64 .\jcef-bundle /E
+          rmdir /s /q .\bin
 
       - name: Download B2J
         uses: dsaltares/fetch-gh-release-asset@master
@@ -35,7 +34,6 @@ jobs:
         run: |
           mkdir Blockly
           tar -xvzf Blockly2Java.tar.gz -C Blockly
-          ls -l
 
       - name: Download Gameboard
         uses: dsaltares/fetch-gh-release-asset@master
