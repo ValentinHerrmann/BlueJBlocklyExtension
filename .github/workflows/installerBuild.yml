@@ -19,7 +19,7 @@ jobs:
         run: |
           tar -xvzf jcef-bundle.tar.gz
           robocopy .\bin\lib\win64 .\jcef-bundle /E
-          exit /B 0
+          exit 0
 
       - name: Download B2J
         uses: dsaltares/fetch-gh-release-asset@master
