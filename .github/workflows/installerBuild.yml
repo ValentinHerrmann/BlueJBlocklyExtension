@@ -41,6 +41,7 @@ jobs:
       - name: Unpack B2J
         run: |
           tar -xvzf Blockly2Java.tar.gz -C resources/Blockly
+          cd resources/Blockly
           dir
 
       - name: Download Gameboard
