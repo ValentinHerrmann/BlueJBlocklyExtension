@@ -35,13 +35,22 @@ jobs:
           dir
           exit 0
 
-      - name: Download B2J
+      - name: Download B2J tar
         uses: dsaltares/fetch-gh-release-asset@master
         with:
           repo: 'ValentinHerrmann/Blockly2Java'
           version: 'latest'
           file: Blockly2Java.tar.gz
           target: Blockly2Java.tar.gz
+          token: ${{ secrets.PAT_TOKEN }}
+
+      - name: Download B2J Changelog
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: 'ValentinHerrmann/Blockly2Java'
+          version: 'latest'
+          file: B2J_CHANGELOG.MD
+          target: B2J_CHANGELOG.MD
           token: ${{ secrets.PAT_TOKEN }}
 
       - name: Unpack B2J
@@ -59,6 +68,14 @@ jobs:
           target: GameboardVorlage.jar
           token: ${{ secrets.PAT_TOKEN }}
       
+      - name: Download Gameboard Changelog
+        uses: dsaltares/fetch-gh-release-asset@master
+        with:
+          repo: 'ValentinHerrmann/Gameboard'
+          version: 'latest'
+          file: GB_CHANGELOG.MD
+          target: GB_CHANGELOG.MD
+          token: ${{ secrets.PAT_TOKEN }}
       - name: List files
         run: |
           dir
@@ -93,9 +110,15 @@ jobs:
           name: BBE_Installer_${{ github.ref_name }}
           path: ${{ github.workspace }}\setup\BBE_Installer_${{ github.ref_name }}.msi
       
+      - name: Create full changelog
+        run: |
+          type BBE_CHANGELOG.MD > CHANGELOG.MD
+          type B2J_CHANGELOG.MD >> CHANGELOG.MD
+          type GB_CHANGELOG.MD >> CHANGELOG.MD
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
+            body_path: CHANGELOG.MD
             files: |
                 ${{ github.workspace }}\setup\BBE_Installer_${{ github.ref_name }}.msi
             token: ${{ secrets.PAT_TOKEN }}
