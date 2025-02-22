@@ -102,7 +102,7 @@ jobs:
           aip-output-dir:  ${{ github.workspace }}\setup
           aip-commands: |
             SetProperty FOO="foo"
-            SetVersion 1.2.0
+            SetVersion ${{ github.ref_name }}
 
       - name: Publish setup artifact
         uses: actions/upload-artifact@v4
