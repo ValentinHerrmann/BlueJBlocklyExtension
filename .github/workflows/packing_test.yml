@@ -15,7 +15,7 @@ jobs:
           version: 'tags/1.0.53'
           file: windows-amd64.tar.gz
           target: windows-amd64.tar.gz
-          token: ${{ secrets.GH_TOK }}
+          token: ${{ secrets.PAT_TOKEN }}
       - name: List files
         run: ls -l
       
