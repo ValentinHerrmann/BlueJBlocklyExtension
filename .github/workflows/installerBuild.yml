@@ -1,5 +1,11 @@
-name: Build Advanced Installer Project (.AIP)  Demo
-on: [workflow_dispatch]
+name: Build Installer
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
 jobs:
   advinst-aip-build-demo:
     runs-on: windows-latest
@@ -75,13 +81,21 @@ jobs:
           advinst-enable-automation: 'true'
           aip-path: ${{ github.workspace }}\extensions2\BBE.aip
           aip-build-name: DefaultBuild
-          aip-package-name: blueJBlocklyInstaller.msi
+          aip-package-name: BBE_Installer_${{ github.ref_name }}.msi
           aip-output-dir:  ${{ github.workspace }}\setup
           aip-commands: |
             SetProperty FOO="foo"
             SetVersion 1.2.0
+            
       - name: Publish setup artifact
         uses: actions/upload-artifact@v4
         with:
-          name: setup
-          path: ${{ github.workspace }}\setup\blueJBlocklyInstaller.msi
+          name: BBE_Installer_${{ github.ref_name }}
+          path: ${{ github.workspace }}\setup\BBE_Installer_${{ github.ref_name }}.msi
+      
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+            files: |
+                ${{ github.workspace }}\setup\BBE_Installer_${{ github.ref_name }}.msi
+            token: ${{ secrets.GH_TOK }}
