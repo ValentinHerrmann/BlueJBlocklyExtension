@@ -49,9 +49,9 @@
     <ROW Component="GameboardVorlage.jar" ComponentId="{7BD6C1AA-0D6E-4E62-A9B1-2958501C768F}" Directory_="userlib_Dir" Attributes="0" KeyPath="GameboardVorlage.jar" Type="0"/>
     <ROW Component="ProductInformation" ComponentId="{01E1DAA4-77B1-45C4-A717-49BFFC0FFDAA}" Directory_="APPDIR" Attributes="260" KeyPath="Version"/>
     <ROW Component="af.pak_1" ComponentId="{1752C292-48A3-4E89-A799-0F98F25C4DF2}" Directory_="locales_2_Dir" Attributes="0" KeyPath="af.pak_1" Type="0"/>
-    <ROW Component="build_meta.json" ComponentId="{3081C6B0-3CF5-49CE-B5D7-F9DDB9715D57}" Directory_="jcefbundle_Dir" Attributes="0" KeyPath="build_meta.json" Type="0"/>
-    <ROW Component="build_meta.json_1" ComponentId="{6AEF88B9-BB6A-42A7-A649-A92C813FC389}" Directory_="jcefbundle_1_Dir" Attributes="0" KeyPath="build_meta.json_1" Type="0"/>
-    <ROW Component="build_meta.json_2" ComponentId="{ABA15137-109A-463C-A925-940DAE612E7C}" Directory_="jcefbundle_3_Dir" Attributes="0" KeyPath="build_meta.json_2" Type="0"/>
+    <ROW Component="build_meta.json" ComponentId="{3081C6B0-3CF5-49CE-B5D7-F9DDB9715D57}" Directory_="jcefbundle_Dir" Attributes="0" KeyPath="chrome_100_percent.pak" Type="0"/>
+    <ROW Component="build_meta.json_1" ComponentId="{6AEF88B9-BB6A-42A7-A649-A92C813FC389}" Directory_="jcefbundle_1_Dir" Attributes="0" KeyPath="chrome_100_percent.pak_1" Type="0"/>
+    <ROW Component="build_meta.json_2" ComponentId="{ABA15137-109A-463C-A925-940DAE612E7C}" Directory_="jcefbundle_3_Dir" Attributes="0" KeyPath="chrome_100_percent.pak_2" Type="0"/>
     <ROW Component="bundle.js_1" ComponentId="{9724B47A-0DC5-4C85-921B-B56BD38FDF3A}" Directory_="Blocklz_Dir" Attributes="0" KeyPath="bundle.js_1" Type="0"/>
     <ROW Component="chrome_elf.dll" ComponentId="{FD80491C-8C29-4FB3-A8F8-B00F525CAA9C}" Directory_="jcefbundle_Dir" Attributes="256" KeyPath="chrome_elf.dll"/>
     <ROW Component="chrome_elf.dll_1" ComponentId="{C2994E70-E69F-470F-B598-B0CF018F95F5}" Directory_="jcefbundle_1_Dir" Attributes="256" KeyPath="chrome_elf.dll_1"/>
@@ -92,23 +92,16 @@
     <ROW File="bundle.js.LICENSE.txt_1" Component_="bundle.js_1" FileName="BUNDLE~1.TXT|bundle.js.LICENSE.txt" Attributes="0" SourcePath="..\resources\Blockly\bundle.js.LICENSE.txt" SelfReg="false"/>
     <ROW File="index.html_1" Component_="index.html" FileName="INDEX~1.HTM|index.html" Attributes="0" SourcePath="..\resources\Blockly\index.html" SelfReg="false"/>
     <ROW File="BluejBlocklyExtension.jar" Component_="BluejBlocklyExtension.jar" FileName="BLUEJB~1.JAR|BluejBlocklyExtension.jar" Attributes="0" SourcePath="..\target\BluejBlocklyExtension.jar" SelfReg="false"/>
-    <ROW File="build_meta.json_1" Component_="build_meta.json_1" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
     <ROW File="chrome_100_percent.pak_1" Component_="build_meta.json_1" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
     <ROW File="chrome_200_percent.pak_1" Component_="build_meta.json_1" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
     <ROW File="chrome_elf.dll_1" Component_="chrome_elf.dll_1" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
     <ROW File="d3dcompiler_47.dll_1" Component_="d3dcompiler_47.dll_1" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
-    <ROW File="gluegen.LICENSE.txt_1" Component_="build_meta.json_1" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
     <ROW File="icudtl.dat_1" Component_="build_meta.json_1" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcef-bundle\icudtl.dat" SelfReg="false"/>
-    <ROW File="install.lock_1" Component_="build_meta.json_1" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcef-bundle\install.lock" SelfReg="false"/>
     <ROW File="jcef.dll_1" Component_="jcef.dll_1" FileName="jcef.dll" Attributes="0" SourcePath="..\jcef-bundle\jcef.dll" SelfReg="false"/>
     <ROW File="jcef_helper.exe_1" Component_="jcef_helper.exe_1" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="jogl.LICENSE.txt_1" Component_="build_meta.json_1" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
     <ROW File="libcef.dll_1" Component_="libcef.dll_1" FileName="libcef.dll" Attributes="0" SourcePath="..\jcef-bundle\libcef.dll" SelfReg="false"/>
     <ROW File="libEGL.dll_1" Component_="libEGL.dll_1" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcef-bundle\libEGL.dll" SelfReg="false"/>
     <ROW File="libGLESv2.dll_1" Component_="libGLESv2.dll_1" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
-    <ROW File="LICENSE.txt_1" Component_="build_meta.json_1" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\LICENSE.txt" SelfReg="false"/>
-    <ROW File="package.bluej_1" Component_="build_meta.json_1" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcef-bundle\package.bluej" SelfReg="false"/>
-    <ROW File="README.txt_1" Component_="build_meta.json_1" FileName="README.txt" Attributes="0" SourcePath="..\jcef-bundle\README.txt" SelfReg="false"/>
     <ROW File="resources.pak_1" Component_="build_meta.json_1" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcef-bundle\resources.pak" SelfReg="false"/>
     <ROW File="snapshot_blob.bin_1" Component_="build_meta.json_1" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
     <ROW File="v8_context_snapshot.bin_1" Component_="build_meta.json_1" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
@@ -170,25 +163,18 @@
     <ROW File="vi.pak_1" Component_="af.pak_1" FileName="vi.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\vi.pak" SelfReg="false"/>
     <ROW File="zhCN.pak_1" Component_="af.pak_1" FileName="zh-CN.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-CN.pak" SelfReg="false"/>
     <ROW File="zhTW.pak_1" Component_="af.pak_1" FileName="zh-TW.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-TW.pak" SelfReg="false"/>
-    <ROW File="build_meta.json" Component_="build_meta.json" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
     <ROW File="libGLESv2.dll" Component_="libGLESv2.dll" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
     <ROW File="chrome_100_percent.pak" Component_="build_meta.json" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
     <ROW File="resources.pak" Component_="build_meta.json" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcef-bundle\resources.pak" SelfReg="false"/>
     <ROW File="chrome_200_percent.pak" Component_="build_meta.json" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
     <ROW File="chrome_elf.dll" Component_="chrome_elf.dll" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
     <ROW File="d3dcompiler_47.dll" Component_="d3dcompiler_47.dll" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
-    <ROW File="gluegen.LICENSE.txt" Component_="build_meta.json" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
     <ROW File="icudtl.dat" Component_="build_meta.json" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcef-bundle\icudtl.dat" SelfReg="false"/>
-    <ROW File="install.lock" Component_="build_meta.json" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcef-bundle\install.lock" SelfReg="false"/>
     <ROW File="jcef.dll" Component_="jcef.dll" FileName="jcef.dll" Attributes="0" SourcePath="..\jcef-bundle\jcef.dll" SelfReg="false"/>
     <ROW File="jcef_helper.exe" Component_="jcef_helper.exe" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
     <ROW File="vulkan1.dll" Component_="vulkan1.dll" FileName="vulkan-1.dll" Attributes="0" SourcePath="..\jcef-bundle\vulkan-1.dll" SelfReg="false"/>
-    <ROW File="jogl.LICENSE.txt" Component_="build_meta.json" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
     <ROW File="libcef.dll" Component_="libcef.dll" FileName="libcef.dll" Attributes="0" SourcePath="..\jcef-bundle\libcef.dll" SelfReg="false"/>
     <ROW File="libEGL.dll" Component_="libEGL.dll" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcef-bundle\libEGL.dll" SelfReg="false"/>
-    <ROW File="LICENSE.txt" Component_="build_meta.json" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\LICENSE.txt" SelfReg="false"/>
-    <ROW File="package.bluej" Component_="build_meta.json" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcef-bundle\package.bluej" SelfReg="false"/>
-    <ROW File="README.txt" Component_="build_meta.json" FileName="README.txt" Attributes="0" SourcePath="..\jcef-bundle\README.txt" SelfReg="false"/>
     <ROW File="snapshot_blob.bin" Component_="build_meta.json" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
     <ROW File="v8_context_snapshot.bin" Component_="build_meta.json" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
     <ROW File="vk_swiftshader.dll" Component_="vk_swiftshader.dll" FileName="VK_SWI~1.DLL|vk_swiftshader.dll" Attributes="0" SourcePath="..\jcef-bundle\vk_swiftshader.dll" SelfReg="false"/>
@@ -248,23 +234,16 @@
     <ROW File="uk.pak" Component_="zhTW.pak" FileName="uk.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\uk.pak" SelfReg="false"/>
     <ROW File="ur.pak" Component_="zhTW.pak" FileName="ur.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\ur.pak" SelfReg="false"/>
     <ROW File="zhCN.pak" Component_="zhTW.pak" FileName="zh-CN.pak" Attributes="0" SourcePath="..\jcef-bundle\locales\zh-CN.pak" SelfReg="false"/>
-    <ROW File="build_meta.json_2" Component_="build_meta.json_2" FileName="BUILD_~1.JSO|build_meta.json" Attributes="0" SourcePath="..\jcef-bundle\build_meta.json" SelfReg="false"/>
     <ROW File="chrome_100_percent.pak_2" Component_="build_meta.json_2" FileName="CHROME~1.PAK|chrome_100_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_100_percent.pak" SelfReg="false"/>
     <ROW File="chrome_200_percent.pak_2" Component_="build_meta.json_2" FileName="CHROME~2.PAK|chrome_200_percent.pak" Attributes="0" SourcePath="..\jcef-bundle\chrome_200_percent.pak" SelfReg="false"/>
     <ROW File="chrome_elf.dll_2" Component_="chrome_elf.dll_2" FileName="CHROME~1.DLL|chrome_elf.dll" Attributes="0" SourcePath="..\jcef-bundle\chrome_elf.dll" SelfReg="false"/>
     <ROW File="d3dcompiler_47.dll_2" Component_="d3dcompiler_47.dll_2" FileName="D3DCOM~1.DLL|d3dcompiler_47.dll" Attributes="0" SourcePath="..\jcef-bundle\d3dcompiler_47.dll" SelfReg="false"/>
-    <ROW File="gluegen.LICENSE.txt_2" Component_="build_meta.json_2" FileName="GLUEGE~1.TXT|gluegen.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\gluegen.LICENSE.txt" SelfReg="false"/>
     <ROW File="icudtl.dat_2" Component_="build_meta.json_2" FileName="icudtl.dat" Attributes="0" SourcePath="..\jcef-bundle\icudtl.dat" SelfReg="false"/>
-    <ROW File="install.lock_2" Component_="build_meta.json_2" FileName="INSTAL~1.LOC|install.lock" Attributes="0" SourcePath="..\jcef-bundle\install.lock" SelfReg="false"/>
     <ROW File="jcef.dll_2" Component_="jcef.dll_2" FileName="jcef.dll" Attributes="0" SourcePath="..\jcef-bundle\jcef.dll" SelfReg="false"/>
     <ROW File="jcef_helper.exe_2" Component_="jcef_helper.exe_2" FileName="JCEF_H~1.EXE|jcef_helper.exe" Attributes="0" SourcePath="..\jcef-bundle\jcef_helper.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="jogl.LICENSE.txt_2" Component_="build_meta.json_2" FileName="JOGLLI~1.TXT|jogl.LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\jogl.LICENSE.txt" SelfReg="false"/>
     <ROW File="libcef.dll_2" Component_="libcef.dll_2" FileName="libcef.dll" Attributes="0" SourcePath="..\jcef-bundle\libcef.dll" SelfReg="false"/>
     <ROW File="libEGL.dll_2" Component_="libEGL.dll_2" FileName="libEGL.dll" Attributes="0" SourcePath="..\jcef-bundle\libEGL.dll" SelfReg="false"/>
     <ROW File="libGLESv2.dll_2" Component_="libGLESv2.dll_2" FileName="LIBGLE~1.DLL|libGLESv2.dll" Attributes="0" SourcePath="..\jcef-bundle\libGLESv2.dll" SelfReg="false"/>
-    <ROW File="LICENSE.txt_2" Component_="build_meta.json_2" FileName="LICENSE.txt" Attributes="0" SourcePath="..\jcef-bundle\LICENSE.txt" SelfReg="false"/>
-    <ROW File="package.bluej_2" Component_="build_meta.json_2" FileName="PACKAG~1.BLU|package.bluej" Attributes="0" SourcePath="..\jcef-bundle\package.bluej" SelfReg="false"/>
-    <ROW File="README.txt_2" Component_="build_meta.json_2" FileName="README.txt" Attributes="0" SourcePath="..\jcef-bundle\README.txt" SelfReg="false"/>
     <ROW File="resources.pak_2" Component_="build_meta.json_2" FileName="RESOUR~1.PAK|resources.pak" Attributes="0" SourcePath="..\jcef-bundle\resources.pak" SelfReg="false"/>
     <ROW File="snapshot_blob.bin_2" Component_="build_meta.json_2" FileName="SNAPSH~1.BIN|snapshot_blob.bin" Attributes="0" SourcePath="..\jcef-bundle\snapshot_blob.bin" SelfReg="false"/>
     <ROW File="v8_context_snapshot.bin_2" Component_="build_meta.json_2" FileName="V8_CON~1.BIN|v8_context_snapshot.bin" Attributes="0" SourcePath="..\jcef-bundle\v8_context_snapshot.bin" SelfReg="false"/>
