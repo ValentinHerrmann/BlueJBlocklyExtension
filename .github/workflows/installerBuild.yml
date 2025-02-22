@@ -15,11 +15,8 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
       - name: Unpack jcef-bundle
         run: |
-          ls -l
           tar -xvzf jcef-bundle.tar.gz
-          ls -l
           cp -r ./bin/lib/win64 jcef-bundle
-          ls -l
           rm -rf ./bin
           ls -l
       - name: Download B2J
@@ -34,6 +31,7 @@ jobs:
         run: |
           mkdir Blockly
           tar -xvzf Blockly2Java.tar.gz -C Blockly
+          ls -l
       - name: Check out repository code
         uses: actions/checkout@v3
         with:
