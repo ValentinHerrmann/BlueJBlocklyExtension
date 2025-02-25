@@ -3,10 +3,14 @@ package BlueJCode;
 import BlueJCode.Blockly.BlocklyHandler;
 import bluej.extensions2.BClass;
 import bluej.extensions2.editor.JavaEditor;
+import org.apache.velocity.runtime.directive.Block;
 
+import java.awt.*;
 import java.io.*;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static java.util.Arrays.stream;
 
 // Multiton-Class
 public class CodeHandler
@@ -92,7 +96,7 @@ public class CodeHandler
             String p = "";
             try
             {
-                if (!editor.getBClass().getPackage().getName().equals("")) {
+                    if (!editor.getBClass().getPackage().getName().equals("")) {
                     p = "package " + editor.getBClass().getPackage().getName() + ";" + System.lineSeparator() + System.lineSeparator();
                 }
             }
@@ -123,16 +127,10 @@ public class CodeHandler
             Logging.log("Wrote java code to file: " + javaFilePath);
 
             editor.loadFile();
-            // Try forcing the gui to update
-            if(editor.isVisible())
-            {
-                editor.loadFile();
+            editor.getBClass().compile(true);
+            Logging.log("Window: "+editor.getBClass().getPackage().getWindow().getTitle());
+            editor.getBClass().getPackage().getWindow().requestFocus();
 
-                //if(!javaEditor.getBClass().isCompiled())
-                //{
-                //    runCompilation(javaEditor);
-                //}
-            }
 
             Logging.log("<<< CodeHandler.writeJavaCodeToFile()");
         }
