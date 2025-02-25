@@ -15,8 +15,13 @@ public class BlocklyHandler
         return instance == null ? (instance = new BlocklyHandler()) : instance;
     }
 
+
     private RestAPI restAPI;
     private MainFrame frame;
+    public MainFrame Frame()
+    {
+        return frame;
+    }
 
 
     protected BlocklyHandler()
@@ -57,6 +62,7 @@ public class BlocklyHandler
                             frame.setExtendedState(frame.getExtendedState() | Frame.MAXIMIZED_BOTH);
                         }
                         frame.setTitle("BlueJ-Blockly: " + CodeHandler.getActiveInstance().getClassName());
+                        frame.requestFocus();
                         Logging.log("<<< Open Blockly(x,y) successful");
                     };
             Thread thread = new Thread(runnable);

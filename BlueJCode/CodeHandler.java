@@ -2,11 +2,19 @@ package BlueJCode;
 
 import BlueJCode.Blockly.BlocklyHandler;
 import bluej.extensions2.BClass;
+import bluej.extensions2.CompilationNotStartedException;
+import bluej.extensions2.PackageNotFoundException;
+import bluej.extensions2.ProjectNotOpenException;
 import bluej.extensions2.editor.JavaEditor;
+import org.apache.commons.logging.Log;
+import org.apache.velocity.runtime.directive.Block;
 
+import java.awt.*;
 import java.io.*;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import static java.util.Arrays.stream;
 
 // Multiton-Class
 public class CodeHandler
@@ -92,7 +100,7 @@ public class CodeHandler
             String p = "";
             try
             {
-                if (!editor.getBClass().getPackage().getName().equals("")) {
+                    if (!editor.getBClass().getPackage().getName().equals("")) {
                     p = "package " + editor.getBClass().getPackage().getName() + ";" + System.lineSeparator() + System.lineSeparator();
                 }
             }
@@ -122,16 +130,33 @@ public class CodeHandler
 
             Logging.log("Wrote java code to file: " + javaFilePath);
 
-            // Try forcing the gui to update
-            if(editor.isVisible())
+            //editor.getBClass().getPackage().getWindow().requestFocus();
+            javafx.application.Platform.runLater(() ->
             {
-                editor.loadFile();
+                try
+                {
+                    editor.loadFile();
+                    Logging.log("File loaded");
+                    editor.getBClass().compile(false);
+                    Logging.log("Compiled");
 
-                //if(!javaEditor.getBClass().isCompiled())
-                //{
-                //    runCompilation(javaEditor);
-                //}
-            }
+                    //Logging.log("Window: "+editor.getBClass().getPackage().getWindow().getTitle());
+                    //editor.getBClass().getPackage().getWindow().requestFocus();
+                }
+                catch (ProjectNotOpenException e)
+                {
+                    throw new RuntimeException(e);
+                }
+                catch (PackageNotFoundException e)
+                {
+                    throw new RuntimeException(e);
+                }
+                catch (CompilationNotStartedException e)
+                {
+                    throw new RuntimeException(e);
+                }
+            });
+
 
             Logging.log("<<< CodeHandler.writeJavaCodeToFile()");
         }
