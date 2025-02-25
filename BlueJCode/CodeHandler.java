@@ -122,6 +122,7 @@ public class CodeHandler
 
             Logging.log("Wrote java code to file: " + javaFilePath);
 
+            editor.loadFile();
             // Try forcing the gui to update
             if(editor.isVisible())
             {
