@@ -2,9 +2,11 @@ package BlueJCode;
 
 import BlueJCode.Blockly.BlocklyHandler;
 import bluej.extensions2.BClass;
+import bluej.extensions2.CompilationNotStartedException;
 import bluej.extensions2.PackageNotFoundException;
 import bluej.extensions2.ProjectNotOpenException;
 import bluej.extensions2.editor.JavaEditor;
+import org.apache.commons.logging.Log;
 import org.apache.velocity.runtime.directive.Block;
 
 import java.awt.*;
@@ -128,22 +130,28 @@ public class CodeHandler
 
             Logging.log("Wrote java code to file: " + javaFilePath);
 
-            editor.loadFile();
-            editor.getBClass().compile(true);
-            Logging.log("Window: "+editor.getBClass().getPackage().getWindow().getTitle());
-
             //editor.getBClass().getPackage().getWindow().requestFocus();
             javafx.application.Platform.runLater(() ->
             {
                 try
                 {
-                    editor.getBClass().getPackage().getWindow().requestFocus();
+                    editor.loadFile();
+                    Logging.log("File loaded");
+                    editor.getBClass().compile(false);
+                    Logging.log("Compiled");
+
+                    //Logging.log("Window: "+editor.getBClass().getPackage().getWindow().getTitle());
+                    //editor.getBClass().getPackage().getWindow().requestFocus();
                 }
                 catch (ProjectNotOpenException e)
                 {
                     throw new RuntimeException(e);
                 }
                 catch (PackageNotFoundException e)
+                {
+                    throw new RuntimeException(e);
+                }
+                catch (CompilationNotStartedException e)
                 {
                     throw new RuntimeException(e);
                 }
