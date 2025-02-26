@@ -36,7 +36,7 @@ import java.io.IOException;
  * For a more feature complete example have also a look onto the example code
  * within the package "tests.detailed".
  */
-class MainFrame extends JFrame
+public class MainFrame extends JFrame
 {
     private static final long serialVersionUID = -5570653778104813836L;
     //private final JTextField address_;
