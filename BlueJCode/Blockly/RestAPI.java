@@ -20,15 +20,15 @@ class RestAPI
         try
         {
             blockly = bHandler;
-            Logging.log(">>> RestAPI.RestAPI()");
+            Logging.logRest(">>> RestAPI.RestAPI()");
             server = HttpServer.create(new InetSocketAddress(8081), 0);
         }
         catch(Exception e)
         {
-            Logging.log(e.toString());
+            Logging.logRest(e.toString());
         }
         init();
-        Logging.log("<<< RestAPI.RestAPI()");
+        Logging.logRest("<<< RestAPI.RestAPI()");
     }
 
     private void init()
@@ -61,7 +61,7 @@ class RestAPI
         }
         catch(Exception e)
         {
-            Logging.log(e.toString());
+            Logging.logRest(e.toString());
         }
 
     }
@@ -89,7 +89,7 @@ class RestAPI
         }
         catch(Exception e)
         {
-            Logging.log(e.getMessage());
+            Logging.logRest(e.getMessage());
         }
         return ret;
     }
@@ -101,11 +101,11 @@ class RestAPI
             String cmd = "netsh http add urlacl url=http://localhost:8081/api/ user=Jeder";
             Process process = Runtime.getRuntime().exec(String.format("cmd.exe /c " + cmd, "."));
             process.waitFor();
-            Logging.log("Access granted");
+            Logging.logRest("Access granted");
         }
         catch(Exception e)
         {
-            Logging.log("Access failed");
+            Logging.logRest("Access failed");
         }
     }
 
@@ -123,7 +123,7 @@ class RestAPI
         }
         catch(Exception e)
         {
-            Logging.log(e.toString());
+            Logging.logRest(e.toString());
             return null;
         }
     }
@@ -132,7 +132,7 @@ class RestAPI
     {
         try
         {
-            Logging.log(">>> GET");
+            Logging.logRest(">>> GET");
 
 
             String responseText = blockly.getCurrentClassPrefix()
@@ -143,7 +143,7 @@ class RestAPI
 
             if(exchange==null)
             {
-                Logging.log("Exchange is null. CORS failed.");
+                Logging.logRest("Exchange is null. CORS failed.");
                 return;
             }
 
@@ -154,13 +154,13 @@ class RestAPI
             output.flush();
 
 
-            Logging.log(responseText);
+            Logging.logRest(responseText);
 
-            Logging.log("<<< GET Response: "+exchange.getResponseCode());
+            Logging.logRest("<<< GET Response: "+exchange.getResponseCode());
         }
         catch(Exception e)
         {
-            Logging.log(e.toString());
+            Logging.logRest(e.toString());
         }
     }
 
@@ -172,12 +172,12 @@ class RestAPI
 
             String contentType = exchange.getRequestHeaders().getFirst("Content-type");// exchange.get
 
-            Logging.log(">>> POST: "+contentType);
+            Logging.logRest(">>> POST: "+contentType);
 
             String data = bodyToString(exchange.getRequestBody());
 
-            Logging.log(contentType);
-            Logging.log("'"+data+"'");
+            Logging.logRest(contentType);
+            Logging.logRest("'"+data+"'");
 
 
 
@@ -196,12 +196,12 @@ class RestAPI
             output.write(responseText.getBytes());
             output.flush();
 
-            Logging.log("<<< POST Response: " + code);
+            Logging.logRest("<<< POST Response: " + code);
 
         }
         catch(Exception e)
         {
-            Logging.log(e.toString());
+            Logging.logRest(e.toString());
         }
     }
 
@@ -211,15 +211,15 @@ class RestAPI
     {
         try
         {
-            Logging.log(">>> RestAPI.handlePost_Xml(...)");
+            Logging.logRest(">>> RestAPI.handlePost_Xml(...)");
             blockly.incomingXmlCode(code);
-            Logging.log("<<< RestAPI.handlePost_Xml(...): 200");
+            Logging.logRest("<<< RestAPI.handlePost_Xml(...): 200");
             return 200;
         }
         catch(Exception e)
         {
-            Logging.log(e.toString());
-            Logging.log("<<< RestAPI.handlePost_Xml(...): 400");
+            Logging.logRest(e.toString());
+            Logging.logRest("<<< RestAPI.handlePost_Xml(...): 400");
             return 400;
         }
     }
@@ -228,13 +228,13 @@ class RestAPI
     {
         try
         {
-            Logging.log(">>> RestAPI.terminate()");
+            Logging.logRest(">>> RestAPI.terminate()");
             server.stop(0);
-            Logging.log("<<< RestAPI.terminate()");
+            Logging.logRest("<<< RestAPI.terminate()");
         }
         catch(Exception e)
         {
-            Logging.log(e.toString());
+            Logging.logRest(e.toString());
         }
     }
 

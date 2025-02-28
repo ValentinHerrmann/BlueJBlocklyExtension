@@ -1,7 +1,9 @@
 package BlueJCode;
 import bluej.extensions2.*;
 import javafx.event.*;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.control.*;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.stage.Window;
@@ -62,11 +64,12 @@ class MenuBuilder extends MenuGenerator
 
 
             CodeHandler.setActiveInstance(curClass);
-            closeAllWindowsExceptMain();
+            //closeAllWindowsExceptMain();
             //Blocklyfenster
             try
             {
                 CodeHandler.getCodeHandler(curClass).open();
+                moveBlueJWindowsToLeft();
             }
             catch(Exception ex)
             {
@@ -74,6 +77,45 @@ class MenuBuilder extends MenuGenerator
             }
             Logging.log("<<< MenuBuilder.openBlocklyEvent");
         };
+    }
+
+    public void moveBlueJWindowsToLeft() {
+
+        try
+        {
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+            double screenWidth = screenBounds.getWidth();
+            double screenHeight = screenBounds.getHeight();
+
+            //BlueJfenster
+            for(Window bjwindow : Stage.getWindows())
+            {
+                if(bjwindow instanceof Stage)
+                {
+                    try
+                    {
+                        Stage stage = (Stage)bjwindow;
+
+                        // Set the stage to fill the left half of the screen
+                        stage.setX(0);
+                        stage.setY(0);
+                        stage.setWidth(screenWidth / 2);
+                        stage.setHeight(screenHeight);
+                        stage.setMaximized(false);
+                    }
+                    catch(Exception e)
+                    {
+                        Logging.log(e.toString());
+                        Logging.log(e.getStackTrace());
+                    }
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            Logging.log(e.toString());
+            Logging.log(e.getStackTrace());
+        }
     }
 
     public void notifyPostClassMenu(BClass bc, MenuItem mi)

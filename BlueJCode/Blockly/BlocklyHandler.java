@@ -74,11 +74,35 @@ public class BlocklyHandler
         }
     }
 
+    private void moveBlocklyRight()
+    {
+        try
+        {
+            // Set JFrame to fill exactly the right half of the screen
+            //GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            //GraphicsDevice gd = ge.getDefaultScreenDevice();
+            Rectangle screenBounds = frame.getGraphicsConfiguration().getBounds();
+            int screenWidth = screenBounds.width;
+            int screenHeight = screenBounds.height;
+            Logging.log("Screen size: " + frame.getBounds().toString());
+
+            frame.setMaximumSize(new Dimension(screenWidth / 2, screenHeight));
+            frame.setBounds(screenWidth / 2, 0, screenWidth / 2, screenHeight);
+            Logging.log("New Blockly-Frame size: " + frame.getBounds().toString());
+            frame.setVisible(true);
+        }
+        catch (Exception ex)
+        {
+            Logging.log(ex.toString());
+        }
+    }
+
     public void openBlockly()
     {
         try
         {
             openBlockly(-1,-1);
+            moveBlocklyRight();
         }
         catch(Exception ex)
         {
