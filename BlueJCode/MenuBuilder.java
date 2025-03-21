@@ -1,4 +1,5 @@
 package BlueJCode;
+import BlueJCode.Blockly.BlocklyHandler;
 import bluej.extensions2.*;
 import javafx.event.*;
 import javafx.geometry.Rectangle2D;
@@ -64,7 +65,7 @@ class MenuBuilder extends MenuGenerator
 
 
             CodeHandler.setActiveInstance(curClass);
-            //closeAllWindowsExceptMain();
+            closeAllWindowsExceptMain();
             //Blocklyfenster
             try
             {
@@ -97,11 +98,16 @@ class MenuBuilder extends MenuGenerator
                         Stage stage = (Stage)bjwindow;
 
                         // Set the stage to fill the left half of the screen
+                        stage.setMaximized(false);
                         stage.setX(0);
                         stage.setY(0);
                         stage.setWidth(screenWidth / 2);
                         stage.setHeight(screenHeight);
-                        stage.setMaximized(false);
+                        if(!stage.getTitle().startsWith("BlueJ:"))
+                        {
+                            BlocklyHandler.Instance().setEditorStage(stage);
+                            stage.requestFocus();
+                        }
                     }
                     catch(Exception e)
                     {

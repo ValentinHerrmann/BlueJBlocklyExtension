@@ -3,6 +3,9 @@ package BlueJCode.Blockly;
 import BlueJCode.CodeHandler;
 import BlueJCode.Config;
 import BlueJCode.Logging;
+import javafx.geometry.Rectangle2D;
+import javafx.stage.Screen;
+import javafx.stage.Stage;
 
 import java.awt.*;
 
@@ -23,6 +26,22 @@ public class BlocklyHandler
         return frame;
     }
 
+    private Stage editorStage;
+    public void setEditorStage(Stage stage)
+    {
+        editorStage = stage;
+
+
+        editorStage.setOnCloseRequest((event) -> {
+            Logging.log("EditorStage close request");
+            frame.setVisible(false);
+        });
+
+    }
+    public  Stage getEditorStage()
+    {
+        return editorStage;
+    }
 
     protected BlocklyHandler()
     {
@@ -59,9 +78,10 @@ public class BlocklyHandler
                         }
                         else
                         {
-                            frame.setExtendedState(frame.getExtendedState() | Frame.MAXIMIZED_BOTH);
+                            frame.setExtendedState(frame.getExtendedState());
                         }
                         frame.setTitle("BlueJ-Blockly: " + CodeHandler.getActiveInstance().getClassName());
+                        frame.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/bbe.png")));
                         frame.requestFocus();
                         Logging.log("<<< Open Blockly(x,y) successful");
                     };
@@ -81,15 +101,17 @@ public class BlocklyHandler
             // Set JFrame to fill exactly the right half of the screen
             //GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
             //GraphicsDevice gd = ge.getDefaultScreenDevice();
-            Rectangle screenBounds = frame.getGraphicsConfiguration().getBounds();
-            int screenWidth = screenBounds.width;
-            int screenHeight = screenBounds.height;
+            Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+            double screenWidth = screenBounds.getWidth();
+            double screenHeight = screenBounds.getHeight();
             Logging.log("Screen size: " + frame.getBounds().toString());
 
-            frame.setMaximumSize(new Dimension(screenWidth / 2, screenHeight));
-            frame.setBounds(screenWidth / 2, 0, screenWidth / 2, screenHeight);
+            frame.setBounds((int)(screenWidth / 2), 0, (int)(screenWidth / 2), (int)screenHeight);
+            //frame.setExtendedState(Frame.MAXIMIZED_VERT);
             Logging.log("New Blockly-Frame size: " + frame.getBounds().toString());
+            frame.setAutoRequestFocus(true);
             frame.setVisible(true);
+            frame.toFront();
         }
         catch (Exception ex)
         {
@@ -116,6 +138,7 @@ public class BlocklyHandler
         {
             Logging.log(">>> Hide Blockly");
             frame.dispose();
+
             Logging.log("<<< Hide Blockly successful");
         }
         catch(Exception ex)
