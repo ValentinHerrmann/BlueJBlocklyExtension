@@ -9,21 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
-    - uses: octue/generate-pull-request-description@1.0.0.beta-2
-      id: pr-description
-      with:
-        pull_request_url: ${{ github.event.pull_request.url }}
-        api_token: ${{ secrets.PAT_TOKEN }}
-
-    - name: Read BBE_CHANGELOG.MD
-      id: read
-      uses: jaywcjlove/github-action-read-file@main
-      with:
-        path: BBE_CHANGELOG.MD
-
-    - name: list files
-      run: ls -l
     - name: conventional file read
       env:
         GH_TOKEN: ${{ secrets.PAT_TOKEN }}
@@ -31,14 +16,4 @@ jobs:
         changelog=$(cat BBE_CHANGELOG.MD)
         echo $changelog
         gh pr edit ${{ github.event.pull_request.number }} --body "$changelog"
-        
-    - name: Echo BBE_CHANGELOG.MD
-      run: echo "${{ steps.read.outputs.content }}"
-
-    - name: Update pull request body
-      uses: riskledger/update-pr-description@v2
-      with:
-        body: ${{ steps.read.outputs.content }}
-        token: ${{ secrets.PAT_TOKEN }}
-
 
