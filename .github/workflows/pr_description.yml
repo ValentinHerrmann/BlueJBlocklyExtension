@@ -1,0 +1,19 @@
+name: Set PR Description
+
+on: 
+  pull_request:
+    types: [synchronize]
+
+jobs:
+  update-pr:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: conventional file read
+      env:
+        GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+      run: |
+        changelog=$(cat BBE_CHANGELOG.MD)
+        echo $changelog
+        gh pr edit ${{ github.event.pull_request.number }} --body "$changelog"
+
