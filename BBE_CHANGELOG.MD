@@ -4,7 +4,7 @@ https://github.com/users/ValentinHerrmann/projects/1
 
 ## Changelog: [BlueJ Extension](https://github.com/ValentinHerrmann/BlueJBlocklyExtension)
 
-### [Version 1.7 (in dev)](https://github.com/ValentinHerrmann/BlueJBlocklyExtension/releases/tag/17.x.x) 
+### [Version 1.7 (in development)](https://github.com/ValentinHerrmann/BlueJBlocklyExtension/releases/tag/17.x.x)
 - Show current dev changelog in pull requests (https://github.com/ValentinHerrmann/BlueJBlocklyExtension/pull/24).
 
 ### [Version 1.6](https://github.com/ValentinHerrmann/BlueJBlocklyExtension/releases/tag/16.15.12) 
