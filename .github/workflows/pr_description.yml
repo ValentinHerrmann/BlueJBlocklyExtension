@@ -20,11 +20,14 @@ jobs:
       id: read
       uses: jaywcjlove/github-action-read-file@main
       with:
-        path:  ${{ github.workspace }}/BBE_CHANGELOG.MD
+        path: BBE_CHANGELOG.MD
 
     - name: list files
       run: ls -l
-      
+    - name: conventional file read
+      run: |
+        changelog=$(cat BBE_CHANGELOG.MD)
+        gh pr edit ${{ github.event.pull_request.number }} --body "$changelog"
     - name: Echo BBE_CHANGELOG.MD
       run: echo "${{ steps.read.outputs.content }}"
 
