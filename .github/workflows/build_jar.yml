@@ -30,3 +30,17 @@ jobs:
         with:
           name: Package
           path: staging
+
+      - name: Read BBE_CHANGELOG.MD
+        id: read_changelog
+        run: |
+          echo "changelog=$(cat BBE_CHANGELOG.MD)" >> $GITHUB_ENV
+
+      - name: Update Pull Request description
+        if: github.event_name == 'pull_request'
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          token: ${{ secrets.PAT_TOKEN }}
+          repository: ${{ github.repository }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: ${{ env.changelog }}
