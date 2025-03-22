@@ -1,6 +1,5 @@
 ## Bug report and Feature requests
-For all subsystems and repositories:
-https://github.com/users/ValentinHerrmann/projects/1
+Submit to the respective repository on Github (links in headlines below).
 
 ## Changelog: [BlueJ Extension](https://github.com/ValentinHerrmann/BlueJBlocklyExtension)
 
