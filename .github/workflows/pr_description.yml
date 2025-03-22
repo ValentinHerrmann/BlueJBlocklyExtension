@@ -21,7 +21,11 @@ jobs:
       uses: jaywcjlove/github-action-read-file@main
       with:
         path:  ${{ github.workspace }}/BBE_CHANGELOG.MD
-    - name: Echo package.json
+
+    - name: list files
+      run: ls -l
+      
+    - name: Echo BBE_CHANGELOG.MD
       run: echo "${{ steps.read.outputs.content }}"
 
     - name: Update pull request body
