@@ -1,0 +1,22 @@
+name: Set PR Description
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  update-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install GitHub CLI
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm install -g @githubnext/github-pr-description
+
+      - name: Set Pull Request body from BBE_CHANGELOG
+        if: ${{ github.event_name == 'push' && github.event.pull_request.number }}
+        run: |
+          npx github-pr-description --pr "${{ github.event.pull_request.number }}" --file "BBE_CHANGELOG.MD"

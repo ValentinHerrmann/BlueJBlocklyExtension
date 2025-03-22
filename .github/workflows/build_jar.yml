@@ -30,9 +30,3 @@ jobs:
         with:
           name: Package
           path: staging
-
-      - name: Read BBE_CHANGELOG.MD and Update Pull Request description
-        if: github.event_name == 'pull_request'
-        run: |
-          changelog=$(cat BBE_CHANGELOG.MD)
-          gh pr edit ${{ github.event.pull_request.number }} --body "$changelog"
