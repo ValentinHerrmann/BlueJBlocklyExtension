@@ -16,10 +16,18 @@ jobs:
         pull_request_url: ${{ github.event.pull_request.url }}
         api_token: ${{ secrets.PAT_TOKEN }}
 
+    - name: Read BBE_CHANGELOG.MD
+      id: read
+      uses: jaywcjlove/github-action-read-file@main
+      with:
+        path: BBE_CHANGELOG.MD
+    - name: Echo package.json
+      run: echo "${{ steps.read.outputs.content }}"
+
     - name: Update pull request body
       uses: riskledger/update-pr-description@v2
       with:
-        body: echo "BBE_CHANGELOG.MD"
+        body: ${{ steps.read.outputs.content }}
         token: ${{ secrets.PAT_TOKEN }}
 
 
