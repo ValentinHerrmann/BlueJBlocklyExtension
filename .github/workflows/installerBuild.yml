@@ -110,11 +110,14 @@ jobs:
           name: BBE_Installer_${{ github.ref_name }}
           path: ${{ github.workspace }}\setup\BBE_Installer_${{ github.ref_name }}.msi
       
-      - name: Create full changelog
+      - name: Create full changelog and update pull request description
+        if: github.event_name == 'pull_request'
         run: |
           type BBE_CHANGELOG.MD > CHANGELOG.MD
           type B2J_CHANGELOG.MD >> CHANGELOG.MD
           type GB_CHANGELOG.MD >> CHANGELOG.MD
+          changelog=$(cat BBE_CHANGELOG.MD)
+          gh pr edit ${{ github.event.pull_request.number }} --body "$changelog"
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
