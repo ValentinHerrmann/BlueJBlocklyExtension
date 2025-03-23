@@ -8,6 +8,7 @@ import BlueJCode.Config;
 import BlueJCode.Logging;
 import me.friwi.jcefmaven.*;
 import me.friwi.jcefmaven.impl.progress.ConsoleProgressHandler;
+import org.apache.velocity.runtime.directive.Block;
 import org.cef.CefApp;
 import org.cef.CefApp.CefAppState;
 import org.cef.CefClient;
@@ -62,6 +63,7 @@ public class MainFrame extends JFrame
             //this.setUndecorated(true);
 
             this.setVisible(true);
+
             // (0) Initialize CEF using the maven loader
             CefAppBuilder builder = new CefAppBuilder();
             builder.setInstallDir(new File(Config.JcefBundlePath()));
@@ -203,7 +205,7 @@ public class MainFrame extends JFrame
             //getContentPane().add(address_, BorderLayout.NORTH);
             getContentPane().add(browserUI_, BorderLayout.CENTER);
             pack();
-            setSize(800, 600);
+            //setSize(800, 600);
             setVisible(true);
 
             // (7) To take care of shutting down CEF accordingly, it's important to call
@@ -231,6 +233,9 @@ public class MainFrame extends JFrame
     public void dispose()
     {
         setVisible(false);
+        javafx.application.Platform.runLater(() -> {
+            BlocklyHandler.Instance().getEditorStage().close();
+        });
     }
 
     // really dispose (=close) blockly

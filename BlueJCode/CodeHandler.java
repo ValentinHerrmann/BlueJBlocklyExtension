@@ -49,6 +49,7 @@ public class CodeHandler
         {
             activeInstance = this;
             BlocklyHandler.Instance().openBlockly();
+            editor.setVisible(true);
         }
         catch (Exception e)
         {
@@ -136,12 +137,7 @@ public class CodeHandler
                 try
                 {
                     editor.loadFile();
-                    Logging.log("File loaded");
                     editor.getBClass().compile(false);
-                    Logging.log("Compiled");
-
-                    //Logging.log("Window: "+editor.getBClass().getPackage().getWindow().getTitle());
-                    //editor.getBClass().getPackage().getWindow().requestFocus();
                 }
                 catch (ProjectNotOpenException e)
                 {
