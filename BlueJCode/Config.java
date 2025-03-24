@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toMap;
 
 public class Config
 {
-    private static final String version = "1.6.1";
+    private static final String version = "1.7";
     private static String blocklyHtmlPath = "/Blockly/index.html";
     private static String jcefBundlePath = "C:\\Users\\Public\\jcef-bundle\\";
     private static String libPath = null;
